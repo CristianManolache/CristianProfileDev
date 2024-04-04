@@ -67,3 +67,11 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+# External GEMS
+gem "sassc-rails"
+gem "bootstrap", "~> 5.2"
+gem "font-awesome-sass", "~> 6.1"
+# Gemfile
+gem "simple_form"
+gem "autoprefixer-rails"
