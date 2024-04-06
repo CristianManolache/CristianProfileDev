@@ -21,11 +21,23 @@ body {
   border-top: 40px solid #4fa3ab;
   position: relative;
 
-  .xicon {
+  .fa-square {
+    font-size: 20px;
     position: absolute;
-    top: -40px;
+    top: -30px;
+    right: 40px;
+  }
+  .fa-minus {
+    font-size: 20px;
+    position: absolute;
+    top: -30px;
+    right: 70px;
+  }
+  .xicon {
+    font-size: 25px;
+    position: absolute;
+    top: -32px;
     right: 10px;
-    font-size: 40px;
   }
 
 }
@@ -108,10 +120,10 @@ body {
     }
 
   }
-  .bestvetcard:hover {
-      transform: scale(1.05);
-      transition: transform 0.2s;
-    }
+  // .bestvetcard:hover {
+  //     transform: scale(1.05);
+  //     transition: transform 0.2s;
+  //   }
 }
 
 // LANGUAGES AND TOOLS
@@ -147,7 +159,7 @@ body {
 
 
 // MEDIA
-@media (max-width: 768px) {
+@media (max-width: 100%) {
 
   .tool-container {
     width: 100%;
