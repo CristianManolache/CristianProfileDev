@@ -13,22 +13,22 @@
   width: 100%;
 }
 .navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-  font-weight: bold;
   font-size: 16px;
-  margin-right: 50px;
+  padding: 20px;
+  margin-left: 20%;
 
   .nav-item {
 
     a {
       color: black;
-      margin-left: 20px;
       text-decoration: none;
-      font-size: 16px;
-      font-weight: bold;
+      font-size: 30px;
+      padding: 50px;
+      letter-spacing: 3px;
       transition: color 0.2s;
       &:hover {
         color: #4FA3AB;
+        font-weight: bold;
       }
 
       &.active {
@@ -42,4 +42,43 @@
 .navbar-lewagon .navbar-brand img {
   width: 165px;
   margin-left: 30px;
+}
+
+
+// MEDIA
+
+@media (max-width: 768px) {
+  .navbar-lewagon {
+    margin-bottom: 30px;
+  }
+  .container-nav {
+    justify-content: space-between;
+    height: 100%;
+  }
+  .navbar-lewagon .navbar-collapse {
+    margin-right: 0;
+    position: relative;
+    max-height: none;
+    width: 100%;
+
+    .nav-item a {
+      padding: 0;
+    }
+  }
+  .navbar-lewagon .navbar-brand img {
+    width: 165px;
+    margin-left: 10px;
+  }
+
+  .navbar-lewagon .navbar-collapse.show {
+    position: absolute;
+    display: inherit;
+    top: 100%;
+    left: 30%;
+    width: 50%;
+    background-color: #E8E8E8;
+    z-index: 1000;
+  }
+
+
 }
