@@ -166,23 +166,10 @@ body {
 
 
 // MEDIA
-@media (max-width: 100%) {
+@media (max-width: 1200px) {
 
-  .tool-container {
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-    gap: 10px;
-    align-items: center;
-  }
-  .tool {
-    text-align: center;
-  }
-  .tool-logo {
-    width: 80px;
-  }
-  .tool-name {
-    font-size: 16px;
+  .container-main {
+    padding: 0 10px;
   }
 }
 
