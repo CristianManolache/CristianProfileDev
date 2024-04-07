@@ -75,3 +75,4 @@ gem "font-awesome-sass", "~> 6.1"
 # Gemfile
 gem "simple_form"
 gem "autoprefixer-rails"
+gem "dotenv-rails"
