@@ -1,32 +1,31 @@
-<nav class="navbar navbar-expand-md navbar-light bg-light">
-  <div class="container container-nav">
+<nav class="navbar navbar-expand-xl">
+  <div class="container-fluid">
     <%= link_to root_path, class: "navbar-brand" do %>
-      <%= image_tag "https://res.cloudinary.com/dg9mc7ach/image/upload/v1712361473/logonavbar_zurenm.png" %>
+      <%= image_tag "https://res.cloudinary.com/dg9mc7ach/image/upload/v1712501511/logocristianprofile_zvqazj.png" %>
     <% end %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+    <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+      <div class="container-nav">
+        <ul class="navbar-nav xl-auto">
+          <li class="nav-item">
+            <%= link_to "HOME", "/", class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "SERVICES", "#", class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "PORTFOLIO", "https://www.github.com/CristianManolache", class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "BLOG", "https://www.cristianmanolache.dev", class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "CONTACT", "contact", class: "nav-link" %>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 </nav>
-
-<div class="collapse navbar-collapse" id="navbarSupportedContent">
-  <div class="container-nav">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
-        <%= link_to "HOME", "/", class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "SERVICES", "#", class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "PORTFOLIO", "https://www.github.com/CristianManolache", class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "BLOG", "https://www.cristianmanolache.dev", class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "CONTACT", "contact", class: "nav-link" %>
-      </li>
-    </ul>
-  </div>
-</div>

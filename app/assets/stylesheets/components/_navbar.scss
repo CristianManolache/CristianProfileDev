@@ -1,20 +1,24 @@
+.container-fluid {
+  padding: 0;
+}
+
 .navbar {
+  width: 100%;
   justify-content: space-between;
-  background: #9E9E9E24;
+  background: #E8E8E8;
   padding: 0 20px;
   margin-bottom: 50px;
   border-bottom: 1px solid black;
+  height: 90px;
 
   .navbar-collapse {
-    font-size: 16px;
-    padding: 20px;
-    margin-left: 20%;
+    margin-left: auto;
 
     .nav-item a {
       color: black;
       text-decoration: none;
-      font-size: 16px;
-      padding: 0 10px;
+      font-size: 30px;
+      padding: 0 50px;
       letter-spacing: 3px;
       transition: color 0.2s;
 
@@ -30,8 +34,8 @@
   }
 
   &-brand img {
-    width: 165px;
-    margin-left: 30px;
+    width: 160px;
+    margin-left: 100px;
   }
 }
 
@@ -39,25 +43,19 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .navbar {
     margin-bottom: 30px;
-  }
-
-  .container-nav {
-    justify-content: space-between;
-    height: 100%;
+    height: auto;
   }
 
   .navbar-collapse {
-    width: 40%;
     position: absolute;
-    top: 120px;
-    right: 0px;
-    background-color: #F8F9FA;
+    top: 110px; /* Adjust this according to your design */
+    right: 0;
+    background-color: #E8E8E8;
     padding: 20px;
     border-bottom: 1px solid black;
     z-index: 1000;
@@ -69,7 +67,6 @@
   }
 
   .navbar-brand img {
-    width: 165px;
-    margin-left: 10px;
+    width: 160px;
   }
 }

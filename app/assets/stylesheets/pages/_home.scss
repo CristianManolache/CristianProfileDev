@@ -112,11 +112,18 @@ body {
     }
 
     .live-demo-link {
-      display: inline-block;
+      display: none;
       font-size: 25px;
       color: #007bff;
       animation: bounce 2s infinite;
       margin: -10px 3px -10px 0;
+    }
+
+    .fa-github {
+      font-size: 30px;
+      color: black;
+      transition: color 0.2s;
+      margin-left: 2px;
     }
 
   }
