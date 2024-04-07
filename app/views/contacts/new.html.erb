@@ -1,0 +1,25 @@
+<div class="container-fluid container-main">
+  <div class="row">
+    <div class="col-xxl-6 offset-xxl-3">
+      <div class="card gaming border">
+        <div class="card-body">
+          <!-- Close icon -->
+          <i class="fas fa-times xicon"></i>
+          <i class="fa-solid fa-minus"></i>
+          <i class="fa-regular fa-square"></i>
+          <!-- Title -->
+          <div class="contactme">
+            <h5 class="card-title">Contact Me</h5>
+          </div>
+          <!-- Contact Form -->
+          <%= simple_form_for @contact do |form| %>
+            <%= form.input :name, required: true, label: "Name" %>
+            <%= form.input :email, required: true, label: "Email" %>
+            <%= form.input :message, required: true, label: "Message", as: :text %>
+            <%= form.button :submit, "Submit", class: "btn btn-primary" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
