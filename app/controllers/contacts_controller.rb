@@ -7,19 +7,13 @@ class ContactsController < ApplicationController
     @contact = Contact.new(contact_params)
 
     if @contact.save
-      ContactMailer.contact_email(@contact).deliver_later # Send email asynchronously
-      redirect_to new_contact_path, notice: "Message sent successfully 🚀"
+      ContactMailer.contact_email(@contact).deliver_now # Send the email
+      redirect_to new_contact_path, flash: { success: "Message sent! Thank you for reaching out." }
     else
       flash.now[:alert] = "Failed to send message. Please try again."
       render :new
     end
-  rescue StandardError => e
-    # Handle any exceptions that occur during email sending
-    Rails.logger.error "Error sending email: #{e.message}"
-    flash.now[:alert] = "An error occurred while sending the message. Please try again later."
-    render :new
   end
-
 
   private
 
