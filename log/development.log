@@ -15029,3 +15029,137 @@ Migrating to CreateContacts (20240408015043)
   [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240408015043') RETURNING "version"[0m
   [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Set [36mSMTP_USERNAME[0m and [36mSMTP_PASSWORD[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for 127.0.0.1 at 2024-04-08 02:55:20 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 369)
+  Rendered shared/_navbar.html.erb (Duration: 1.7ms | Allocations: 614)
+  Rendered shared/_footer.html.erb (Duration: 0.8ms | Allocations: 93)
+  Rendered layout layouts/application.html.erb (Duration: 226.3ms | Allocations: 61910)
+Completed 200 OK in 242ms (Views: 231.1ms | ActiveRecord: 0.0ms | Allocations: 66046)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2024-04-08 02:55:22 +0100
+Processing by ContactsController#new as HTML
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.0ms | Allocations: 2838)
+
+
+  
+NameError (uninitialized constant ContactsController::Contact
+
+    @contact = Contact.new
+               ^^^^^^^
+Did you mean?  ContactMailer):
+  
+app/controllers/contacts_controller.rb:3:in `new'
+Started GET "/contacts/new" for 127.0.0.1 at 2024-04-08 02:56:09 +0100
+Processing by ContactsController#new as HTML
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 2676)
+
+
+  
+NameError (uninitialized constant ContactsController::Contacts
+
+    @contact = Contacts.new
+               ^^^^^^^^
+Did you mean?  ContactsHelper):
+  
+app/controllers/contacts_controller.rb:3:in `new'
+Started GET "/contacts/new" for 127.0.0.1 at 2024-04-08 02:56:21 +0100
+Processing by ContactsController#new as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 2743)
+
+
+  
+NameError (uninitialized constant ContactsController::Contact
+
+    @contact = Contact.new
+               ^^^^^^^
+Did you mean?  ContactMailer):
+  
+app/controllers/contacts_controller.rb:3:in `new'
+[dotenv] Set [36mSMTP_USERNAME[0m and [36mSMTP_PASSWORD[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Set [36mSMTP_USERNAME[0m and [36mSMTP_PASSWORD[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/contacts/new" for 127.0.0.1 at 2024-04-08 02:56:58 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ContactsController#new as HTML
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 3691)
+
+
+  
+NameError (uninitialized constant ContactsController::Contact
+
+    @contact = Contact.new
+               ^^^^^^^
+Did you mean?  ContactMailer):
+  
+app/controllers/contacts_controller.rb:3:in `new'
+Started GET "/contacts/new" for 127.0.0.1 at 2024-04-08 02:58:15 +0100
+Processing by ContactsController#new as HTML
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 2692)
+
+
+  
+NameError (uninitialized constant ContactsController::Contact
+
+    @contact = Contact.new
+               ^^^^^^^
+Did you mean?  ContactMailer):
+  
+app/controllers/contacts_controller.rb:3:in `new'
+Started GET "/contacts/new" for 127.0.0.1 at 2024-04-08 02:58:58 +0100
+Processing by ContactsController#new as HTML
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms | Allocations: 2684)
+
+
+  
+NameError (uninitialized constant ContactsController::Contact
+
+    @contact = Contact.new
+               ^^^^^^^
+Did you mean?  ContactMailer):
+  
+app/controllers/contacts_controller.rb:3:in `new'
+[dotenv] Set [36mSMTP_USERNAME[0m and [36mSMTP_PASSWORD[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mSMTP_USERNAME[0m and [36mSMTP_PASSWORD[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mSMTP_USERNAME[0m and [36mSMTP_PASSWORD[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mSMTP_USERNAME[0m and [36mSMTP_PASSWORD[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateContacts (20240408020149)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "contacts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "message" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+[dotenv] Set [36mSMTP_USERNAME[0m and [36mSMTP_PASSWORD[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mSMTP_USERNAME[0m and [36mSMTP_PASSWORD[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateContacts (20240408020149)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "contacts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "message" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+[dotenv] Set [36mSMTP_USERNAME[0m and [36mSMTP_PASSWORD[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DropContacts (20240408020230)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.9ms)[0m  [1m[35mDROP TABLE "contacts"[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240408020230') RETURNING "version"[0m
+  [1m[36mTRANSACTION (5.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
