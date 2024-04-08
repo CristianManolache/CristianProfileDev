@@ -14736,3 +14736,5 @@ Processing by ContactsController#new as TURBO_STREAM
 Completed 200 OK in 16ms (Views: 15.7ms | ActiveRecord: 0.0ms | Allocations: 9991)
 
 
+[dotenv] Set [36mSMTP_USERNAME[0m and [36mSMTP_PASSWORD[0m
+[dotenv] Loaded [33m.env[0m
