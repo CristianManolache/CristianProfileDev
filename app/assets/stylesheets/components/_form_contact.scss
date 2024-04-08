@@ -1,0 +1,41 @@
+//Container Left
+.container-contact {
+  padding: 0px 20px;
+  margin-bottom: 20px;
+
+  .container-left-details {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+    h1 {
+      font-size: 30px;
+      font-weight: bold;
+      margin-bottom: 10px;
+
+    }
+
+    .form-label.required {
+      display: none;
+    }
+
+
+    // CONTACT ME
+
+    .contact-me {
+      text-align: center;
+    }
+
+    .btn-contact {
+      background-color: $primary;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 20px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+    #helper-contact {
+      color: #fdaa1a;
+    }
+}

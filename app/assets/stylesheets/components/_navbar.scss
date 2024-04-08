@@ -48,12 +48,12 @@
 @media (max-width: 1200px) {
   .navbar {
     margin-bottom: 30px;
-    height: auto;
+    height: 80px;
   }
 
   .navbar-collapse {
     position: absolute;
-    top: 170px; /* Adjust this according to your design */
+    top: 80px; /* Adjust this according to your design */
     right: 0;
     background-color: #E8E8E8;
     padding: 20px;
@@ -67,6 +67,7 @@
   }
 
   .navbar-brand img {
-    width: 160px;
+    width: 80px;
+    margin-left: 0;
   }
 }

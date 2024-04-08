@@ -11514,3 +11514,3225 @@ Completed 200 OK in 17ms (Views: 16.2ms | ActiveRecord: 0.0ms | Allocations: 872
 
 [dotenv] Set [36mSMTP_USERNAME[0m and [36mSMTP_PASSWORD[0m
 [dotenv] Loaded [33m.env[0m
+Started GET "/" for ::1 at 2024-04-07 21:48:39 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 380)
+  Rendered layouts/_notice.html.erb (Duration: 0.4ms | Allocations: 203)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 552)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 93)
+  Rendered layout layouts/application.html.erb (Duration: 3595.7ms | Allocations: 153629)
+Completed 200 OK in 3607ms (Views: 3599.6ms | ActiveRecord: 0.0ms | Allocations: 158079)
+
+
+Started GET "/contact" for ::1 at 2024-04-07 21:48:49 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/contact"):
+  
+Started GET "/contacts/new" for ::1 at 2024-04-07 21:49:00 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 61.8ms | Allocations: 14113)
+  Rendered layouts/_notice.html.erb (Duration: 0.0ms | Allocations: 12)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 131)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 67.2ms | Allocations: 22248)
+Completed 200 OK in 100ms (Views: 68.1ms | ActiveRecord: 2.5ms | Allocations: 39817)
+
+
+Started POST "/contacts" for ::1 at 2024-04-07 21:49:17 +0100
+Processing by ContactsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "contact"=>{"name"=>"Laurentiu", "email"=>"extendedindeed@outlook.com", "message"=>"I love test"}, "commit"=>"Submit"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/contacts_controller.rb:9:in `create'
+  [1m[36mContact Create (1.0ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Laurentiu"], ["email", "extendedindeed@outlook.com"], ["message", "I love test"], ["created_at", "2024-04-07 20:49:17.336109"], ["updated_at", "2024-04-07 20:49:17.336109"]]
+  ↳ app/controllers/contacts_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/contacts_controller.rb:9:in `create'
+ContactMailer#contact_email: processed outbound mail in 11.4ms
+Failed delivery of mail 661306cd66713_cc8843304237a@DESKTOP-UOTQUM5.mail error_class=ArgumentError error_message="SMTP-AUTH requested but missing user name"
+Date: Sun, 07 Apr 2024 21:49:17 +0100
+From: contact@mlcristian.com
+Reply-To: extendedindeed@outlook.com
+To: mlcristian@outlook.com
+Message-ID: <661306cd66713_cc8843304237a@DESKTOP-UOTQUM5.mail>
+Subject: New Contact form message
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+I love test
+Completed 500 Internal Server Error in 104ms (ActiveRecord: 4.7ms | Allocations: 38694)
+
+
+  
+ArgumentError (SMTP-AUTH requested but missing user name):
+  
+app/controllers/contacts_controller.rb:10:in `create'
+[dotenv] Set [36mSMTP_USERNAME[0m and [36mSMTP_PASSWORD[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/contacts/new" for ::1 at 2024-04-07 21:55:09 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 57.6ms | Allocations: 10873)
+  Rendered layouts/_notice.html.erb (Duration: 0.6ms | Allocations: 163)
+  Rendered shared/_navbar.html.erb (Duration: 4.4ms | Allocations: 452)
+  Rendered shared/_footer.html.erb (Duration: 0.4ms | Allocations: 93)
+  Rendered layout layouts/application.html.erb (Duration: 184.0ms | Allocations: 70730)
+Completed 200 OK in 235ms (Views: 192.3ms | ActiveRecord: 2.0ms | Allocations: 90096)
+
+
+Started POST "/contacts" for ::1 at 2024-04-07 21:55:23 +0100
+Processing by ContactsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "contact"=>{"name"=>"Laurentiu", "email"=>"extendedindeed@outlook.com", "message"=>"I need help"}, "commit"=>"Submit"}
+  [1m[36mTRANSACTION (6.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/contacts_controller.rb:9:in `create'
+  [1m[36mContact Create (18.9ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Laurentiu"], ["email", "extendedindeed@outlook.com"], ["message", "I need help"], ["created_at", "2024-04-07 20:55:23.933214"], ["updated_at", "2024-04-07 20:55:23.933214"]]
+  ↳ app/controllers/contacts_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (4.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/contacts_controller.rb:9:in `create'
+ContactMailer#contact_email: processed outbound mail in 3.9ms
+Delivered mail 6613083cb06d_d855433029570@DESKTOP-UOTQUM5.mail (1915.6ms)
+Date: Sun, 07 Apr 2024 21:55:24 +0100
+From: contact@mlcristian.com
+Reply-To: extendedindeed@outlook.com
+To: mlcristian@outlook.com
+Message-ID: <6613083cb06d_d855433029570@DESKTOP-UOTQUM5.mail>
+Subject: New Contact form message
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+I need help
+Redirected to http://localhost:3000/contacts/new
+Completed 302 Found in 2051ms (ActiveRecord: 23.9ms | Allocations: 24819)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 21:55:25 +0100
+Processing by ContactsController#new as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1866)
+  Rendered layouts/_notice.html.erb (Duration: 0.1ms | Allocations: 14)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 127)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 13.3ms | Allocations: 10078)
+Completed 200 OK in 15ms (Views: 14.5ms | ActiveRecord: 0.0ms | Allocations: 10465)
+
+
+[dotenv] Set [36mSMTP_USERNAME[0m and [36mSMTP_PASSWORD[0m
+[dotenv] Loaded [33m.env[0m
+Started POST "/contacts" for ::1 at 2024-04-07 22:05:36 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ContactsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "contact"=>{"name"=>"Laurentiu", "email"=>"extendedindeed@outlook.com", "message"=>"Wonderfull dev"}, "commit"=>"Submit"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/contacts_controller.rb:9:in `create'
+  [1m[36mContact Create (0.9ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Laurentiu"], ["email", "extendedindeed@outlook.com"], ["message", "Wonderfull dev"], ["created_at", "2024-04-07 21:05:36.324636"], ["updated_at", "2024-04-07 21:05:36.324636"]]
+  ↳ app/controllers/contacts_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (3.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/contacts_controller.rb:9:in `create'
+ContactMailer#contact_email: processed outbound mail in 2.1ms
+Delivered mail 66130aa059bd9_ec96431c9935e@DESKTOP-UOTQUM5.mail (1832.4ms)
+Date: Sun, 07 Apr 2024 22:05:36 +0100
+From: contact@mlcristian.com
+Reply-To: extendedindeed@outlook.com
+To: mlcristian@outlook.com
+Message-ID: <66130aa059bd9_ec96431c9935e@DESKTOP-UOTQUM5.mail>
+Subject: New Contact Message from mlcristian.com
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Name: Laurentiu
+
+Message: Wonderfull dev
+Redirected to http://localhost:3000/contacts/new
+Completed 302 Found in 1899ms (ActiveRecord: 6.4ms | Allocations: 42220)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 22:05:38 +0100
+Processing by ContactsController#new as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 19.6ms | Allocations: 9546)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | Allocations: 462)
+  Rendered layouts/_notice.html.erb (Duration: 0.3ms | Allocations: 183)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 93)
+  Rendered layout layouts/application.html.erb (Duration: 129.1ms | Allocations: 69578)
+Completed 200 OK in 136ms (Views: 132.5ms | ActiveRecord: 0.0ms | Allocations: 72884)
+
+
+Started POST "/contacts" for ::1 at 2024-04-07 22:06:09 +0100
+Processing by ContactsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "contact"=>{"name"=>"Laurentiu", "email"=>"extendedindeed@outlook.com", "message"=>"Test 4"}, "commit"=>"Submit"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/contacts_controller.rb:9:in `create'
+  [1m[36mContact Create (0.6ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Laurentiu"], ["email", "extendedindeed@outlook.com"], ["message", "Test 4"], ["created_at", "2024-04-07 21:06:09.763012"], ["updated_at", "2024-04-07 21:06:09.763012"]]
+  ↳ app/controllers/contacts_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (4.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/contacts_controller.rb:9:in `create'
+ContactMailer#contact_email: processed outbound mail in 0.6ms
+Delivered mail 66130ac1bc6c4_ec9643309945b@DESKTOP-UOTQUM5.mail (1626.8ms)
+Date: Sun, 07 Apr 2024 22:06:09 +0100
+From: contact@mlcristian.com
+Reply-To: extendedindeed@outlook.com
+To: mlcristian@outlook.com
+Message-ID: <66130ac1bc6c4_ec9643309945b@DESKTOP-UOTQUM5.mail>
+Subject: New Contact Message from mlcristian.com
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Name: Laurentiu
+
+Message: Test 4
+Redirected to http://localhost:3000/contacts/new
+Completed 302 Found in 1641ms (ActiveRecord: 6.4ms | Allocations: 11976)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 22:06:11 +0100
+Processing by ContactsController#new as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 2365)
+  Rendered shared/_navbar.html.erb (Duration: 8.0ms | Allocations: 425)
+  Rendered layouts/_notice.html.erb (Duration: 0.4ms | Allocations: 177)
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 22.2ms | Allocations: 25255)
+Completed 200 OK in 24ms (Views: 23.7ms | ActiveRecord: 0.0ms | Allocations: 26371)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 22:06:40 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 2375)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 425)
+  Rendered layouts/_notice.html.erb (Duration: 0.4ms | Allocations: 168)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 15.3ms | Allocations: 25336)
+Completed 200 OK in 21ms (Views: 16.7ms | ActiveRecord: 1.6ms | Allocations: 30313)
+
+
+Started POST "/contacts" for ::1 at 2024-04-07 22:06:56 +0100
+Processing by ContactsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "contact"=>{"name"=>"Laurentiu", "email"=>"extendedindeed@outlook.com", "message"=>"test new"}, "commit"=>"Submit"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/contacts_controller.rb:9:in `create'
+  [1m[36mContact Create (1.0ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Laurentiu"], ["email", "extendedindeed@outlook.com"], ["message", "test new"], ["created_at", "2024-04-07 21:06:56.333533"], ["updated_at", "2024-04-07 21:06:56.333533"]]
+  ↳ app/controllers/contacts_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/contacts_controller.rb:9:in `create'
+ContactMailer#contact_email: processed outbound mail in 0.5ms
+Delivered mail 66130af053a55_ec9643589958c@DESKTOP-UOTQUM5.mail (1992.1ms)
+Date: Sun, 07 Apr 2024 22:06:56 +0100
+From: contact@mlcristian.com
+Reply-To: extendedindeed@outlook.com
+To: mlcristian@outlook.com
+Message-ID: <66130af053a55_ec9643589958c@DESKTOP-UOTQUM5.mail>
+Subject: New Contact Message from mlcristian.com
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Name: Laurentiu
+
+Message: test new
+Redirected to http://localhost:3000/contacts/new
+Completed 302 Found in 2003ms (ActiveRecord: 4.7ms | Allocations: 7979)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 22:06:58 +0100
+Processing by ContactsController#new as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1849)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 129)
+  Rendered layouts/_notice.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | Allocations: 10129)
+Completed 200 OK in 15ms (Views: 14.7ms | ActiveRecord: 0.0ms | Allocations: 10511)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 22:07:26 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 2377)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 16.9ms | Allocations: 25130)
+Completed 200 OK in 23ms (Views: 17.9ms | ActiveRecord: 2.8ms | Allocations: 30145)
+
+
+Started POST "/contacts" for ::1 at 2024-04-07 22:07:35 +0100
+Processing by ContactsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "contact"=>{"name"=>"Laurentiu", "email"=>"extendedindeed@outlook.com", "message"=>"Salem"}, "commit"=>"Submit"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/contacts_controller.rb:9:in `create'
+  [1m[36mContact Create (0.8ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Laurentiu"], ["email", "extendedindeed@outlook.com"], ["message", "Salem"], ["created_at", "2024-04-07 21:07:35.356496"], ["updated_at", "2024-04-07 21:07:35.356496"]]
+  ↳ app/controllers/contacts_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (3.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/contacts_controller.rb:9:in `create'
+ContactMailer#contact_email: processed outbound mail in 1.3ms
+Delivered mail 66130b175ace2_ec96431c99626@DESKTOP-UOTQUM5.mail (1707.8ms)
+Date: Sun, 07 Apr 2024 22:07:35 +0100
+From: contact@mlcristian.com
+Reply-To: extendedindeed@outlook.com
+To: mlcristian@outlook.com
+Message-ID: <66130b175ace2_ec96431c99626@DESKTOP-UOTQUM5.mail>
+Subject: New Contact Message from mlcristian.com
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Name: Laurentiu
+
+Message: Salem
+Redirected to http://localhost:3000/contacts/new
+Completed 302 Found in 1725ms (ActiveRecord: 4.6ms | Allocations: 7940)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 22:07:37 +0100
+Processing by ContactsController#new as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1843)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 129)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 9.5ms | Allocations: 10099)
+Completed 200 OK in 10ms (Views: 10.0ms | ActiveRecord: 0.0ms | Allocations: 10477)
+
+
+Started GET "/" for ::1 at 2024-04-07 22:22:44 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 303)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | Allocations: 475)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 121.4ms | Allocations: 23508)
+Completed 200 OK in 126ms (Views: 124.0ms | ActiveRecord: 0.0ms | Allocations: 24593)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 22:22:45 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 6.1ms | Allocations: 2471)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 129)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 15.3ms | Allocations: 10726)
+Completed 200 OK in 22ms (Views: 16.2ms | ActiveRecord: 0.0ms | Allocations: 14482)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 22:22:52 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1658)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 9552)
+Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 0.0ms | Allocations: 9826)
+
+
+Started POST "/contacts" for ::1 at 2024-04-07 22:23:09 +0100
+Processing by ContactsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "contact"=>{"name"=>"Laurentiu", "email"=>"extendedindeed@outlook.com", "message"=>"Amazing"}, "commit"=>"Submit"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/contacts_controller.rb:9:in `create'
+  [1m[36mContact Create (2.4ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Laurentiu"], ["email", "extendedindeed@outlook.com"], ["message", "Amazing"], ["created_at", "2024-04-07 21:23:09.428691"], ["updated_at", "2024-04-07 21:23:09.428691"]]
+  ↳ app/controllers/contacts_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (5.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/contacts_controller.rb:9:in `create'
+ContactMailer#contact_email: processed outbound mail in 0.8ms
+Delivered mail 66130ebd6c25d_ec96436c997b8@DESKTOP-UOTQUM5.mail (1878.9ms)
+Date: Sun, 07 Apr 2024 22:23:09 +0100
+From: contact@mlcristian.com
+Reply-To: extendedindeed@outlook.com
+To: mlcristian@outlook.com
+Message-ID: <66130ebd6c25d_ec96436c997b8@DESKTOP-UOTQUM5.mail>
+Subject: New Contact Message from mlcristian.com
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Name: Laurentiu
+
+Message: Amazing
+Redirected to http://localhost:3000/contacts/new
+Completed 302 Found in 1895ms (ActiveRecord: 8.6ms | Allocations: 8161)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 22:23:11 +0100
+Processing by ContactsController#new as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1864)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 129)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 9941)
+Completed 200 OK in 9ms (Views: 8.6ms | ActiveRecord: 0.0ms | Allocations: 10318)
+
+
+Started GET "/" for ::1 at 2024-04-07 22:23:17 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 137)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 8110)
+Completed 200 OK in 7ms (Views: 7.0ms | ActiveRecord: 0.0ms | Allocations: 8365)
+
+
+Started GET "/contact" for ::1 at 2024-04-07 22:23:22 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/contact"):
+  
+Started GET "/contacts/new" for ::1 at 2024-04-07 22:24:30 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 4.8ms | Allocations: 2505)
+  Rendered shared/_navbar.html.erb (Duration: 1.4ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 21.0ms | Allocations: 25339)
+Completed 200 OK in 30ms (Views: 22.4ms | ActiveRecord: 2.1ms | Allocations: 30342)
+
+
+Started POST "/contacts" for ::1 at 2024-04-07 22:24:39 +0100
+Processing by ContactsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "contact"=>{"name"=>"Laurentiu", "email"=>"extendedindeed@outlook.com", "message"=>"test"}, "commit"=>"Submit"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/contacts_controller.rb:9:in `create'
+  [1m[36mContact Create (2.9ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Laurentiu"], ["email", "extendedindeed@outlook.com"], ["message", "test"], ["created_at", "2024-04-07 21:24:39.970226"], ["updated_at", "2024-04-07 21:24:39.970226"]]
+  ↳ app/controllers/contacts_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (3.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/contacts_controller.rb:9:in `create'
+ContactMailer#contact_email: processed outbound mail in 1.3ms
+Delivered mail 66130f17f09d6_ec96431c99822@DESKTOP-UOTQUM5.mail (1887.0ms)
+Date: Sun, 07 Apr 2024 22:24:39 +0100
+From: contact@mlcristian.com
+Reply-To: extendedindeed@outlook.com
+To: mlcristian@outlook.com
+Message-ID: <66130f17f09d6_ec96431c99822@DESKTOP-UOTQUM5.mail>
+Subject: New Contact Message from mlcristian.com
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Name: Laurentiu
+
+Message: test
+Redirected to http://localhost:3000/contacts/new
+Completed 302 Found in 1905ms (ActiveRecord: 6.9ms | Allocations: 7975)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 22:24:41 +0100
+Processing by ContactsController#new as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1877)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 129)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 11.7ms | Allocations: 10165)
+Completed 200 OK in 12ms (Views: 12.0ms | ActiveRecord: 0.0ms | Allocations: 10542)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 22:26:59 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 3.9ms | Allocations: 2456)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 427)
+  Rendered shared/_footer.html.erb (Duration: 0.8ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 114.3ms | Allocations: 25313)
+Completed 200 OK in 121ms (Views: 115.5ms | ActiveRecord: 2.5ms | Allocations: 30315)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 22:27:10 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 12.8ms | Allocations: 2469)
+  Rendered shared/_navbar.html.erb (Duration: 1.8ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 59.8ms | Allocations: 25234)
+Completed 200 OK in 81ms (Views: 62.3ms | ActiveRecord: 9.3ms | Allocations: 30198)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 22:28:41 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 471.6ms | Allocations: 1659)
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 591.5ms | Allocations: 9790)
+Completed 200 OK in 639ms (Views: 603.1ms | ActiveRecord: 0.0ms | Allocations: 10087)
+
+
+Started GET "/" for ::1 at 2024-04-07 22:32:34 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 35.2ms | Allocations: 295)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | Allocations: 162)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 90.2ms | Allocations: 8644)
+Completed 200 OK in 107ms (Views: 94.8ms | ActiveRecord: 0.0ms | Allocations: 9192)
+
+
+Started GET "/" for ::1 at 2024-04-07 22:34:12 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 7)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 137)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 6939.9ms | Allocations: 90410)
+Completed 200 OK in 6943ms (Views: 6941.6ms | ActiveRecord: 0.0ms | Allocations: 90664)
+
+
+Started GET "/" for ::1 at 2024-04-07 22:35:07 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 137)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 4529.3ms | Allocations: 79254)
+Completed 200 OK in 4531ms (Views: 4529.9ms | ActiveRecord: 0.0ms | Allocations: 79507)
+
+
+Started GET "/" for ::1 at 2024-04-07 22:35:27 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 7)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 137)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 838.7ms | Allocations: 8026)
+Completed 200 OK in 963ms (Views: 962.3ms | ActiveRecord: 0.0ms | Allocations: 8279)
+
+
+Started GET "/contact" for ::1 at 2024-04-07 22:35:32 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/contact"):
+  
+Started GET "/contact" for ::1 at 2024-04-07 22:35:43 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/contact"):
+  
+Started GET "/" for ::1 at 2024-04-07 22:37:09 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 298)
+  Rendered shared/_navbar.html.erb (Duration: 1.3ms | Allocations: 475)
+  Rendered shared/_footer.html.erb (Duration: 0.4ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 74.3ms | Allocations: 23436)
+Completed 200 OK in 79ms (Views: 77.6ms | ActiveRecord: 0.0ms | Allocations: 24514)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 22:37:14 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 9.5ms | Allocations: 2457)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 129)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 23.4ms | Allocations: 10454)
+Completed 200 OK in 44ms (Views: 24.2ms | ActiveRecord: 0.0ms | Allocations: 14210)
+
+
+Started GET "/contacts/contacts/new" for ::1 at 2024-04-07 22:37:17 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/contacts/contacts/new"):
+  
+Started GET "/contacts/new" for ::1 at 2024-04-07 22:39:38 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 5.2ms | Allocations: 2449)
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 43.8ms | Allocations: 25085)
+Completed 200 OK in 92ms (Views: 46.5ms | ActiveRecord: 59.4ms | Allocations: 30026)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 22:39:52 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 15.3ms | Allocations: 2470)
+  Rendered shared/_navbar.html.erb (Duration: 3.0ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 48.8ms | Allocations: 25204)
+Completed 200 OK in 66ms (Views: 51.1ms | ActiveRecord: 6.8ms | Allocations: 30207)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 22:39:59 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 11.1ms | Allocations: 2454)
+  Rendered shared/_navbar.html.erb (Duration: 1.5ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.4ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 38.2ms | Allocations: 24922)
+Completed 200 OK in 54ms (Views: 41.6ms | ActiveRecord: 6.3ms | Allocations: 29861)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 22:41:32 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 12.1ms | Allocations: 2467)
+  Rendered shared/_navbar.html.erb (Duration: 1.3ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.9ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 53.6ms | Allocations: 25105)
+Completed 200 OK in 76ms (Views: 56.6ms | ActiveRecord: 9.9ms | Allocations: 30048)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 22:42:15 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 74.6ms | Allocations: 2475)
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 113.3ms | Allocations: 25209)
+Completed 200 OK in 131ms (Views: 116.3ms | ActiveRecord: 5.6ms | Allocations: 30212)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 22:42:35 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 5.6ms | Allocations: 2464)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.8ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 37.0ms | Allocations: 24933)
+Completed 200 OK in 48ms (Views: 39.7ms | ActiveRecord: 2.5ms | Allocations: 29872)
+
+
+Started GET "/" for ::1 at 2024-04-07 22:43:25 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 5.6ms | Allocations: 291)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 162)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 22.3ms | Allocations: 8574)
+Completed 200 OK in 32ms (Views: 29.4ms | ActiveRecord: 0.0ms | Allocations: 9120)
+
+
+Started GET "/" for ::1 at 2024-04-07 22:44:47 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 137)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 4532.0ms | Allocations: 78894)
+Completed 200 OK in 4534ms (Views: 4533.1ms | ActiveRecord: 0.0ms | Allocations: 79148)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 22:45:20 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 16.5ms | Allocations: 1758)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 53.3ms | Allocations: 9594)
+Completed 200 OK in 55ms (Views: 54.2ms | ActiveRecord: 0.0ms | Allocations: 9874)
+
+
+Started GET "/contacts/contacts/new" for ::1 at 2024-04-07 22:45:21 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/contacts/contacts/new"):
+  
+Started GET "/contacts/new" for ::1 at 2024-04-07 22:46:19 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1652)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 15.3ms | Allocations: 9487)
+Completed 200 OK in 17ms (Views: 16.5ms | ActiveRecord: 0.0ms | Allocations: 9755)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 22:47:48 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 50.8ms | Allocations: 2460)
+  Rendered shared/_navbar.html.erb (Duration: 5.1ms | Allocations: 427)
+  Rendered shared/_footer.html.erb (Duration: 0.9ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 158.2ms | Allocations: 25207)
+Completed 200 OK in 207ms (Views: 162.9ms | ActiveRecord: 0.0ms | Allocations: 29475)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 22:49:30 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 7.7ms | Allocations: 2475)
+  Rendered shared/_navbar.html.erb (Duration: 1.5ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.7ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 44.5ms | Allocations: 25132)
+Completed 200 OK in 77ms (Views: 53.0ms | ActiveRecord: 12.1ms | Allocations: 30094)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 22:50:29 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 11.4ms | Allocations: 2467)
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 61.3ms | Allocations: 24936)
+Completed 200 OK in 77ms (Views: 64.8ms | ActiveRecord: 2.3ms | Allocations: 29879)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 22:50:33 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 11.4ms | Allocations: 1646)
+  Rendered shared/_navbar.html.erb (Duration: 1.4ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 43.9ms | Allocations: 9632)
+Completed 200 OK in 45ms (Views: 44.6ms | ActiveRecord: 0.0ms | Allocations: 9928)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 22:50:49 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 10.0ms | Allocations: 2487)
+  Rendered shared/_navbar.html.erb (Duration: 2.4ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.4ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 60.7ms | Allocations: 25235)
+Completed 200 OK in 77ms (Views: 63.1ms | ActiveRecord: 3.3ms | Allocations: 30198)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 22:51:03 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 9.5ms | Allocations: 2464)
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | Allocations: 93)
+  Rendered layout layouts/application.html.erb (Duration: 53.0ms | Allocations: 25126)
+Completed 200 OK in 67ms (Views: 59.1ms | ActiveRecord: 3.4ms | Allocations: 30069)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 22:51:10 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 7.5ms | Allocations: 2466)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | Allocations: 427)
+  Rendered shared/_footer.html.erb (Duration: 1.4ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 96.8ms | Allocations: 25162)
+Completed 200 OK in 112ms (Views: 99.9ms | ActiveRecord: 3.8ms | Allocations: 30104)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 22:51:23 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 10.0ms | Allocations: 2484)
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 46.8ms | Allocations: 25220)
+Completed 200 OK in 62ms (Views: 49.8ms | ActiveRecord: 4.4ms | Allocations: 30221)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 22:55:37 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 6.7ms | Allocations: 2471)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | Allocations: 429)
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 4489.6ms | Allocations: 96063)
+Completed 200 OK in 4509ms (Views: 4496.5ms | ActiveRecord: 2.0ms | Allocations: 101006)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 22:56:26 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 25.5ms | Allocations: 1675)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 39.3ms | Allocations: 9554)
+Completed 200 OK in 58ms (Views: 54.0ms | ActiveRecord: 0.0ms | Allocations: 9851)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 22:57:19 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 10.0ms | Allocations: 1640)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 4988.6ms | Allocations: 80124)
+Completed 200 OK in 4991ms (Views: 4990.5ms | ActiveRecord: 0.0ms | Allocations: 80392)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 22:57:59 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 5.9ms | Allocations: 1658)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 6281.4ms | Allocations: 80167)
+Completed 200 OK in 6283ms (Views: 6282.7ms | ActiveRecord: 0.0ms | Allocations: 80435)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 22:58:49 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 8.5ms | Allocations: 1687)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 5526.3ms | Allocations: 80197)
+Completed 200 OK in 5528ms (Views: 5527.0ms | ActiveRecord: 0.0ms | Allocations: 80465)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 23:00:03 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 20.9ms | Allocations: 1650)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 50.5ms | Allocations: 9606)
+Completed 200 OK in 59ms (Views: 53.2ms | ActiveRecord: 0.0ms | Allocations: 9874)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 23:01:06 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 321.2ms | Allocations: 1634)
+  Rendered shared/_navbar.html.erb (Duration: 3.5ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 645.9ms | Allocations: 9597)
+Completed 200 OK in 718ms (Views: 674.3ms | ActiveRecord: 0.0ms | Allocations: 9865)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 23:03:06 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 52.0ms | Allocations: 2483)
+  Rendered shared/_navbar.html.erb (Duration: 3.9ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 1.5ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 286.8ms | Allocations: 25183)
+Completed 200 OK in 403ms (Views: 306.8ms | ActiveRecord: 0.0ms | Allocations: 29455)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 23:04:15 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 23.7ms | Allocations: 2460)
+  Rendered shared/_navbar.html.erb (Duration: 3.3ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 119.1ms | Allocations: 24972)
+Completed 200 OK in 207ms (Views: 122.3ms | ActiveRecord: 82.0ms | Allocations: 29911)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 23:05:50 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 7.7ms | Allocations: 2506)
+  Rendered shared/_navbar.html.erb (Duration: 1.7ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.7ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 60.8ms | Allocations: 25295)
+Completed 200 OK in 88ms (Views: 63.6ms | ActiveRecord: 10.9ms | Allocations: 30260)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 23:07:42 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 5.5ms | Allocations: 2488)
+  Rendered shared/_navbar.html.erb (Duration: 2.3ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 70.5ms | Allocations: 25188)
+Completed 200 OK in 101ms (Views: 73.2ms | ActiveRecord: 21.5ms | Allocations: 30133)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 23:08:08 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 8.2ms | Allocations: 1637)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 27.7ms | Allocations: 9516)
+Completed 200 OK in 29ms (Views: 28.9ms | ActiveRecord: 0.0ms | Allocations: 9812)
+
+
+Started GET "/" for ::1 at 2024-04-07 23:08:45 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 291)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 162)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | Allocations: 8618)
+Completed 200 OK in 17ms (Views: 15.8ms | ActiveRecord: 0.0ms | Allocations: 9165)
+
+
+Started GET "/" for ::1 at 2024-04-07 23:08:47 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 7)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 137)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 22.9ms | Allocations: 8195)
+Completed 200 OK in 25ms (Views: 23.6ms | ActiveRecord: 0.0ms | Allocations: 8450)
+
+
+Started GET "/" for ::1 at 2024-04-07 23:09:37 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 137)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 6456.2ms | Allocations: 79124)
+Completed 200 OK in 6457ms (Views: 6456.8ms | ActiveRecord: 0.0ms | Allocations: 79378)
+
+
+Started GET "/" for ::1 at 2024-04-07 23:10:06 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 7)
+  Rendered shared/_navbar.html.erb (Duration: 2.8ms | Allocations: 137)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 103.9ms | Allocations: 8116)
+Completed 200 OK in 120ms (Views: 110.4ms | ActiveRecord: 0.0ms | Allocations: 8369)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 23:11:29 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 379.0ms | Allocations: 1764)
+  Rendered shared/_navbar.html.erb (Duration: 8.9ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.9ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 623.3ms | Allocations: 9643)
+Completed 200 OK in 732ms (Views: 651.6ms | ActiveRecord: 0.0ms | Allocations: 9923)
+
+
+Started GET "/contacts/contacts/new" for ::1 at 2024-04-07 23:11:30 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/contacts/contacts/new"):
+  
+Started GET "/contacts/new" for ::1 at 2024-04-07 23:12:14 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 29.4ms | Allocations: 2479)
+  Rendered shared/_navbar.html.erb (Duration: 4.8ms | Allocations: 427)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 222.1ms | Allocations: 25243)
+Completed 200 OK in 331ms (Views: 227.1ms | ActiveRecord: 57.6ms | Allocations: 30243)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 23:12:45 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 11.0ms | Allocations: 2485)
+  Rendered shared/_navbar.html.erb (Duration: 1.1ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 46.6ms | Allocations: 25157)
+Completed 200 OK in 85ms (Views: 50.4ms | ActiveRecord: 20.6ms | Allocations: 30121)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 23:14:20 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 7.1ms | Allocations: 1652)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 9123.9ms | Allocations: 80379)
+Completed 200 OK in 9126ms (Views: 9125.1ms | ActiveRecord: 0.0ms | Allocations: 80675)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 23:15:19 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1681)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 4267.2ms | Allocations: 80400)
+Completed 200 OK in 4268ms (Views: 4267.8ms | ActiveRecord: 0.0ms | Allocations: 80668)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 23:15:49 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 9.5ms | Allocations: 2498)
+  Rendered shared/_navbar.html.erb (Duration: 1.6ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 60.6ms | Allocations: 25286)
+Completed 200 OK in 95ms (Views: 62.8ms | ActiveRecord: 15.3ms | Allocations: 30288)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 23:16:00 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 9.7ms | Allocations: 2459)
+  Rendered shared/_navbar.html.erb (Duration: 41.8ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 879.2ms | Allocations: 24986)
+Completed 200 OK in 894ms (Views: 882.5ms | ActiveRecord: 3.8ms | Allocations: 29925)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 23:16:29 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 199.8ms | Allocations: 1640)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 6175.9ms | Allocations: 80555)
+Completed 200 OK in 6218ms (Views: 6216.8ms | ActiveRecord: 0.0ms | Allocations: 80851)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 23:20:21 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 8.6ms | Allocations: 2500)
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.4ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 46.3ms | Allocations: 25289)
+Completed 200 OK in 64ms (Views: 49.1ms | ActiveRecord: 6.2ms | Allocations: 30292)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 23:23:34 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 5.9ms | Allocations: 2482)
+  Rendered shared/_navbar.html.erb (Duration: 1.3ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 53.5ms | Allocations: 25195)
+Completed 200 OK in 69ms (Views: 57.7ms | ActiveRecord: 3.8ms | Allocations: 30134)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 23:25:11 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 13.8ms | Allocations: 2474)
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 1.2ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 61.3ms | Allocations: 25263)
+Completed 200 OK in 83ms (Views: 69.1ms | ActiveRecord: 4.7ms | Allocations: 30228)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 23:26:02 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 10.7ms | Allocations: 2462)
+  Rendered shared/_navbar.html.erb (Duration: 3.0ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 1.0ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 51.5ms | Allocations: 25250)
+Completed 200 OK in 73ms (Views: 55.3ms | ActiveRecord: 6.8ms | Allocations: 30196)
+
+
+Started GET "/" for ::1 at 2024-04-07 23:26:51 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 298)
+Started GET "/contacts/new" for ::1 at 2024-04-07 23:26:55 +0100
+  Rendered shared/_navbar.html.erb (Duration: 1.9ms | Allocations: 476)
+  Rendered shared/_footer.html.erb (Duration: 0.4ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 4481.4ms | Allocations: 94954)
+Completed 200 OK in 4486ms (Views: 4484.7ms | ActiveRecord: 0.0ms | Allocations: 96035)
+
+
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 4.7ms | Allocations: 2758)
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 58.4ms | Allocations: 32798)
+Completed 200 OK in 72ms (Views: 63.0ms | ActiveRecord: 2.2ms | Allocations: 37997)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 23:27:03 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 10.5ms | Allocations: 1634)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 4696.7ms | Allocations: 80441)
+Completed 200 OK in 4699ms (Views: 4697.6ms | ActiveRecord: 0.0ms | Allocations: 80738)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 23:27:20 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 8.6ms | Allocations: 1654)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 7432.6ms | Allocations: 80186)
+Completed 200 OK in 7435ms (Views: 7433.6ms | ActiveRecord: 0.0ms | Allocations: 80454)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 23:28:14 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 8.4ms | Allocations: 2515)
+  Rendered shared/_navbar.html.erb (Duration: 1.7ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 47.9ms | Allocations: 25299)
+Completed 200 OK in 62ms (Views: 50.4ms | ActiveRecord: 5.3ms | Allocations: 30301)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 23:28:59 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 18.2ms | Allocations: 2482)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.4ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 46.7ms | Allocations: 25276)
+Completed 200 OK in 62ms (Views: 52.4ms | ActiveRecord: 3.6ms | Allocations: 30240)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 23:31:28 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 12.9ms | Allocations: 2479)
+  Rendered shared/_navbar.html.erb (Duration: 1.4ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.8ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 68.9ms | Allocations: 25263)
+Completed 200 OK in 87ms (Views: 73.1ms | ActiveRecord: 3.6ms | Allocations: 30205)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 23:31:47 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 13.4ms | Allocations: 2515)
+  Rendered shared/_navbar.html.erb (Duration: 1.8ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.7ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 63.9ms | Allocations: 25314)
+Completed 200 OK in 78ms (Views: 66.6ms | ActiveRecord: 4.3ms | Allocations: 30316)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 23:31:57 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 5.8ms | Allocations: 2476)
+  Rendered shared/_navbar.html.erb (Duration: 1.0ms | Allocations: 427)
+  Rendered shared/_footer.html.erb (Duration: 0.4ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 39.5ms | Allocations: 25268)
+Completed 200 OK in 52ms (Views: 41.8ms | ActiveRecord: 4.3ms | Allocations: 30210)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 23:32:14 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 7.0ms | Allocations: 2508)
+  Rendered shared/_navbar.html.erb (Duration: 3.1ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 42.4ms | Allocations: 25297)
+Completed 200 OK in 54ms (Views: 45.2ms | ActiveRecord: 3.3ms | Allocations: 30299)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 23:34:18 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 66.4ms | Allocations: 2478)
+  Rendered shared/_navbar.html.erb (Duration: 4.9ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.7ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 231.0ms | Allocations: 25268)
+Completed 200 OK in 484ms (Views: 250.3ms | ActiveRecord: 44.1ms | Allocations: 30234)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 23:34:50 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 9.3ms | Allocations: 2479)
+  Rendered shared/_navbar.html.erb (Duration: 1.4ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.4ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 61.7ms | Allocations: 25278)
+Completed 200 OK in 83ms (Views: 67.2ms | ActiveRecord: 8.0ms | Allocations: 30222)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 23:34:54 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 10.7ms | Allocations: 1631)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 57.5ms | Allocations: 9700)
+Completed 200 OK in 68ms (Views: 63.0ms | ActiveRecord: 0.0ms | Allocations: 9997)
+
+
+Started GET "/" for ::1 at 2024-04-07 23:34:59 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 295)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 162)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 24.6ms | Allocations: 8829)
+Completed 200 OK in 27ms (Views: 25.7ms | ActiveRecord: 0.0ms | Allocations: 9375)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 23:36:01 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 28.7ms | Allocations: 1768)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 284.7ms | Allocations: 9650)
+Completed 200 OK in 338ms (Views: 333.9ms | ActiveRecord: 0.0ms | Allocations: 9931)
+
+
+Started GET "/contacts/contacts/new" for ::1 at 2024-04-07 23:36:02 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/contacts/contacts/new"):
+  
+Started GET "/contacts/contacts/new" for ::1 at 2024-04-07 23:36:26 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/contacts/contacts/new"):
+  
+Started GET "/" for ::1 at 2024-04-07 23:36:27 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 7)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 137)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 864.4ms | Allocations: 8289)
+Completed 200 OK in 1008ms (Views: 1005.1ms | ActiveRecord: 0.0ms | Allocations: 8545)
+
+
+Started GET "/" for ::1 at 2024-04-07 23:36:29 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 47.5ms | Allocations: 7)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 137)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 79.6ms | Allocations: 8107)
+Completed 200 OK in 80ms (Views: 80.0ms | ActiveRecord: 0.0ms | Allocations: 8363)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 23:38:21 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 137.7ms | Allocations: 1666)
+  Rendered shared/_navbar.html.erb (Duration: 3.9ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 309.8ms | Allocations: 9546)
+Completed 200 OK in 339ms (Views: 318.7ms | ActiveRecord: 0.0ms | Allocations: 9816)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 23:41:35 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 36.0ms | Allocations: 2473)
+  Rendered shared/_navbar.html.erb (Duration: 2.7ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 1.2ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 129.9ms | Allocations: 25066)
+Completed 200 OK in 193ms (Views: 139.8ms | ActiveRecord: 0.0ms | Allocations: 29337)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 23:43:35 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 17.7ms | Allocations: 2466)
+  Rendered shared/_navbar.html.erb (Duration: 2.9ms | Allocations: 427)
+  Rendered shared/_footer.html.erb (Duration: 1.4ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 169.4ms | Allocations: 25034)
+Completed 200 OK in 232ms (Views: 172.7ms | ActiveRecord: 47.0ms | Allocations: 29974)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 23:44:15 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 4.5ms | Allocations: 2528)
+  Rendered shared/_navbar.html.erb (Duration: 3.7ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 1.3ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 56.1ms | Allocations: 25061)
+Completed 200 OK in 82ms (Views: 57.8ms | ActiveRecord: 17.2ms | Allocations: 30026)
+
+
+Started GET "/" for ::1 at 2024-04-07 23:44:49 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 298)
+  Rendered shared/_navbar.html.erb (Duration: 2.0ms | Allocations: 473)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 32.8ms | Allocations: 23227)
+Completed 200 OK in 37ms (Views: 35.3ms | ActiveRecord: 0.0ms | Allocations: 24310)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 23:44:50 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 6.1ms | Allocations: 2493)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 129)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 26.1ms | Allocations: 10691)
+Completed 200 OK in 75ms (Views: 27.0ms | ActiveRecord: 32.9ms | Allocations: 15132)
+
+
+Started GET "/" for ::1 at 2024-04-07 23:45:14 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 298)
+  Rendered shared/_navbar.html.erb (Duration: 1.3ms | Allocations: 473)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 24.1ms | Allocations: 23255)
+Completed 200 OK in 27ms (Views: 26.0ms | ActiveRecord: 0.0ms | Allocations: 24338)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 23:45:15 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 11.6ms | Allocations: 2464)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 129)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 26.7ms | Allocations: 10467)
+Completed 200 OK in 64ms (Views: 29.9ms | ActiveRecord: 30.7ms | Allocations: 14888)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 23:46:08 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 27.6ms | Allocations: 2511)
+  Rendered shared/_navbar.html.erb (Duration: 2.6ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 105.0ms | Allocations: 25301)
+Completed 200 OK in 182ms (Views: 111.0ms | ActiveRecord: 15.6ms | Allocations: 30299)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 23:46:20 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 12.8ms | Allocations: 2478)
+  Rendered shared/_navbar.html.erb (Duration: 1.4ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 60.6ms | Allocations: 25076)
+Completed 200 OK in 101ms (Views: 65.4ms | ActiveRecord: 31.3ms | Allocations: 30020)
+
+
+Started GET "/" for ::1 at 2024-04-07 23:46:26 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 302)
+  Rendered shared/_navbar.html.erb (Duration: 1.9ms | Allocations: 473)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 35.5ms | Allocations: 23453)
+Completed 200 OK in 41ms (Views: 38.7ms | ActiveRecord: 0.0ms | Allocations: 24536)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 23:46:27 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 9.6ms | Allocations: 2496)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 129)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 18.8ms | Allocations: 10499)
+Completed 200 OK in 38ms (Views: 19.8ms | ActiveRecord: 12.8ms | Allocations: 14977)
+
+
+Started GET "/" for ::1 at 2024-04-07 23:46:49 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 298)
+  Rendered shared/_navbar.html.erb (Duration: 2.1ms | Allocations: 473)
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 28.3ms | Allocations: 23254)
+Completed 200 OK in 31ms (Views: 29.7ms | ActiveRecord: 0.0ms | Allocations: 24337)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 23:46:50 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 7.3ms | Allocations: 2473)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 129)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 18.1ms | Allocations: 10671)
+Completed 200 OK in 54ms (Views: 18.9ms | ActiveRecord: 4.3ms | Allocations: 15112)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 23:47:03 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 8.2ms | Allocations: 2474)
+  Rendered shared/_navbar.html.erb (Duration: 1.0ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 1.1ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 41.4ms | Allocations: 25263)
+Completed 200 OK in 55ms (Views: 46.9ms | ActiveRecord: 2.2ms | Allocations: 30210)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 23:47:47 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 3.9ms | Allocations: 2514)
+  Rendered shared/_navbar.html.erb (Duration: 1.8ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 43.4ms | Allocations: 25308)
+Completed 200 OK in 66ms (Views: 45.4ms | ActiveRecord: 6.6ms | Allocations: 30311)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 23:47:59 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 11.0ms | Allocations: 2475)
+  Rendered shared/_navbar.html.erb (Duration: 3.3ms | Allocations: 427)
+  Rendered shared/_footer.html.erb (Duration: 0.8ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 57.4ms | Allocations: 25289)
+Completed 200 OK in 74ms (Views: 61.9ms | ActiveRecord: 2.6ms | Allocations: 30235)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 23:48:13 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 7.3ms | Allocations: 2492)
+  Rendered shared/_navbar.html.erb (Duration: 2.7ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 48.6ms | Allocations: 25281)
+Completed 200 OK in 64ms (Views: 51.4ms | ActiveRecord: 3.2ms | Allocations: 30284)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 23:48:23 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 13.2ms | Allocations: 2494)
+  Rendered shared/_navbar.html.erb (Duration: 3.2ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.7ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 85.4ms | Allocations: 25288)
+Completed 200 OK in 95ms (Views: 87.9ms | ActiveRecord: 1.6ms | Allocations: 30253)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 23:48:58 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 15.7ms | Allocations: 2472)
+  Rendered shared/_navbar.html.erb (Duration: 1.8ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 58.2ms | Allocations: 25265)
+Completed 200 OK in 93ms (Views: 71.5ms | ActiveRecord: 4.0ms | Allocations: 30232)
+
+
+Started GET "/" for ::1 at 2024-04-07 23:49:26 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 298)
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | Allocations: 473)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 28.2ms | Allocations: 23454)
+Completed 200 OK in 31ms (Views: 29.9ms | ActiveRecord: 0.0ms | Allocations: 24538)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 23:49:27 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 11.7ms | Allocations: 2469)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 129)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 38.0ms | Allocations: 10472)
+Completed 200 OK in 70ms (Views: 39.2ms | ActiveRecord: 7.0ms | Allocations: 14893)
+
+
+Started GET "/" for ::1 at 2024-04-07 23:49:47 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 302)
+  Rendered shared/_navbar.html.erb (Duration: 4.6ms | Allocations: 473)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 29.8ms | Allocations: 23462)
+Completed 200 OK in 33ms (Views: 32.4ms | ActiveRecord: 0.0ms | Allocations: 24547)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 23:49:48 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 14.8ms | Allocations: 2517)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 129)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 32.8ms | Allocations: 10520)
+Completed 200 OK in 61ms (Views: 34.2ms | ActiveRecord: 19.4ms | Allocations: 14998)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 23:50:09 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 4.9ms | Allocations: 2487)
+  Rendered shared/_navbar.html.erb (Duration: 1.0ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.8ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 30.5ms | Allocations: 25276)
+Completed 200 OK in 54ms (Views: 38.4ms | ActiveRecord: 5.8ms | Allocations: 30218)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 23:50:32 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 6.9ms | Allocations: 2497)
+  Rendered shared/_navbar.html.erb (Duration: 2.5ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.8ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 45.1ms | Allocations: 25290)
+Completed 200 OK in 66ms (Views: 49.1ms | ActiveRecord: 7.5ms | Allocations: 30256)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 23:51:58 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 6.4ms | Allocations: 2484)
+  Rendered shared/_navbar.html.erb (Duration: 2.4ms | Allocations: 427)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 56.2ms | Allocations: 25328)
+Completed 200 OK in 78ms (Views: 59.1ms | ActiveRecord: 8.1ms | Allocations: 30274)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 23:52:51 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1662)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 23.4ms | Allocations: 9541)
+Completed 200 OK in 28ms (Views: 26.6ms | ActiveRecord: 0.0ms | Allocations: 9837)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 23:53:58 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 5.1ms | Allocations: 1643)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 8597.2ms | Allocations: 80380)
+Completed 200 OK in 8598ms (Views: 8597.7ms | ActiveRecord: 0.0ms | Allocations: 80648)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 23:54:57 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 4.7ms | Allocations: 2496)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | Allocations: 426)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 29.2ms | Allocations: 25091)
+Completed 200 OK in 40ms (Views: 30.8ms | ActiveRecord: 4.0ms | Allocations: 30094)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 23:55:18 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 9.2ms | Allocations: 2484)
+  Rendered shared/_navbar.html.erb (Duration: 2.6ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.9ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 71.4ms | Allocations: 25273)
+Completed 200 OK in 100ms (Views: 79.3ms | ActiveRecord: 7.7ms | Allocations: 30240)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 23:55:25 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 8.8ms | Allocations: 2469)
+  Rendered shared/_navbar.html.erb (Duration: 2.8ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.8ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 46.9ms | Allocations: 25080)
+Completed 200 OK in 59ms (Views: 49.9ms | ActiveRecord: 2.2ms | Allocations: 30027)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 23:55:53 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 10.4ms | Allocations: 2502)
+  Rendered shared/_navbar.html.erb (Duration: 1.5ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 2.1ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 50.1ms | Allocations: 25291)
+Completed 200 OK in 68ms (Views: 55.0ms | ActiveRecord: 6.8ms | Allocations: 30300)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 23:56:19 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 8.9ms | Allocations: 2487)
+  Rendered shared/_navbar.html.erb (Duration: 1.4ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.7ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 59.4ms | Allocations: 25276)
+Completed 200 OK in 76ms (Views: 62.8ms | ActiveRecord: 3.5ms | Allocations: 30242)
+
+
+Started GET "/contacts/contacts/new" for ::1 at 2024-04-07 23:56:25 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/contacts/contacts/new"):
+  
+Started GET "/contacts/new" for ::1 at 2024-04-07 23:57:15 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 14.8ms | Allocations: 1666)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 33.7ms | Allocations: 9740)
+Completed 200 OK in 42ms (Views: 35.7ms | ActiveRecord: 0.0ms | Allocations: 10037)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 23:58:15 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 6.1ms | Allocations: 1655)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 25.7ms | Allocations: 9534)
+Completed 200 OK in 27ms (Views: 26.4ms | ActiveRecord: 0.0ms | Allocations: 9803)
+
+
+Started GET "/" for ::1 at 2024-04-07 23:59:02 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 291)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 162)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 21.1ms | Allocations: 8621)
+Completed 200 OK in 26ms (Views: 23.9ms | ActiveRecord: 0.0ms | Allocations: 9168)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 23:59:58 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 10.5ms | Allocations: 2482)
+  Rendered shared/_navbar.html.erb (Duration: 2.0ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.7ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 61.4ms | Allocations: 25337)
+Completed 200 OK in 88ms (Views: 64.8ms | ActiveRecord: 5.0ms | Allocations: 30343)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-07 23:59:59 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 12.3ms | Allocations: 1637)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 26.5ms | Allocations: 9704)
+Completed 200 OK in 28ms (Views: 27.2ms | ActiveRecord: 0.0ms | Allocations: 10001)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 00:00:03 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 10.4ms | Allocations: 1661)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 28.7ms | Allocations: 9540)
+Completed 200 OK in 30ms (Views: 29.4ms | ActiveRecord: 0.0ms | Allocations: 9808)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 00:00:45 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 4.8ms | Allocations: 2502)
+  Rendered shared/_navbar.html.erb (Duration: 1.4ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 124.4ms | Allocations: 25295)
+Completed 200 OK in 133ms (Views: 125.7ms | ActiveRecord: 4.2ms | Allocations: 30300)
+
+
+Started GET "/" for ::1 at 2024-04-08 00:00:59 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 291)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 162)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 36.6ms | Allocations: 8621)
+Completed 200 OK in 38ms (Views: 37.6ms | ActiveRecord: 0.0ms | Allocations: 9169)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 00:01:03 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 4.8ms | Allocations: 1748)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 42.9ms | Allocations: 9814)
+Completed 200 OK in 44ms (Views: 43.5ms | ActiveRecord: 0.0ms | Allocations: 10095)
+
+
+Started GET "/contacts/contacts/new" for ::1 at 2024-04-08 00:01:03 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/contacts/contacts/new"):
+  
+Started GET "/" for ::1 at 2024-04-08 00:02:12 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 300)
+Started GET "/contacts/new" for ::1 at 2024-04-08 00:02:13 +0100
+  Rendered shared/_navbar.html.erb (Duration: 1.5ms | Allocations: 475)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 6583.8ms | Allocations: 94967)
+Completed 200 OK in 6588ms (Views: 6586.3ms | ActiveRecord: 0.0ms | Allocations: 96050)
+
+
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 6.6ms | Allocations: 2763)
+  Rendered shared/_navbar.html.erb (Duration: 1.3ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 67.7ms | Allocations: 32444)
+Completed 200 OK in 85ms (Views: 75.1ms | ActiveRecord: 2.6ms | Allocations: 38145)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 00:02:40 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 11.3ms | Allocations: 1640)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 4431.0ms | Allocations: 80374)
+Completed 200 OK in 4433ms (Views: 4431.8ms | ActiveRecord: 0.0ms | Allocations: 80670)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 00:02:58 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 11.4ms | Allocations: 1678)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 6192.2ms | Allocations: 80207)
+Completed 200 OK in 6194ms (Views: 6192.9ms | ActiveRecord: 0.0ms | Allocations: 80477)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 00:03:32 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1675)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 6111.9ms | Allocations: 80214)
+Completed 200 OK in 6114ms (Views: 6112.9ms | ActiveRecord: 0.0ms | Allocations: 80483)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 00:09:50 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 24.2ms | Allocations: 1638)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 40.7ms | Allocations: 9561)
+Completed 200 OK in 47ms (Views: 41.7ms | ActiveRecord: 0.0ms | Allocations: 9830)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 00:10:20 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 17.8ms | Allocations: 2497)
+  Rendered shared/_navbar.html.erb (Duration: 2.8ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 155.3ms | Allocations: 25090)
+Completed 200 OK in 195ms (Views: 162.0ms | ActiveRecord: 0.0ms | Allocations: 29360)
+
+
+Started GET "/" for ::1 at 2024-04-08 00:10:40 +0100
+Started GET "/contacts/new" for ::1 at 2024-04-08 00:10:41 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 12.3ms | Allocations: 300)
+  Rendered shared/_navbar.html.erb (Duration: 12.2ms | Allocations: 473)
+  Rendered shared/_footer.html.erb (Duration: 0.8ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 69.7ms | Allocations: 23440)
+Completed 200 OK in 75ms (Views: 73.1ms | ActiveRecord: 0.0ms | Allocations: 24526)
+
+
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 6.2ms | Allocations: 2495)
+  Rendered shared/_navbar.html.erb (Duration: 2.2ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 50.1ms | Allocations: 25015)
+Completed 200 OK in 77ms (Views: 52.4ms | ActiveRecord: 25.2ms | Allocations: 29977)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 00:11:12 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 10.6ms | Allocations: 2516)
+  Rendered shared/_navbar.html.erb (Duration: 23.8ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 78.1ms | Allocations: 25309)
+Completed 200 OK in 99ms (Views: 87.7ms | ActiveRecord: 3.7ms | Allocations: 30276)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 00:12:46 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 4.1ms | Allocations: 2499)
+  Rendered shared/_navbar.html.erb (Duration: 2.3ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 1.5ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 36.0ms | Allocations: 25019)
+Completed 200 OK in 60ms (Views: 39.9ms | ActiveRecord: 6.9ms | Allocations: 29965)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 00:13:40 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 6.8ms | Allocations: 2497)
+  Rendered shared/_navbar.html.erb (Duration: 1.0ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 42.5ms | Allocations: 25291)
+Completed 200 OK in 55ms (Views: 44.9ms | ActiveRecord: 3.6ms | Allocations: 30296)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 00:14:03 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 11.0ms | Allocations: 2487)
+  Rendered shared/_navbar.html.erb (Duration: 1.5ms | Allocations: 427)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 55.9ms | Allocations: 25036)
+Completed 200 OK in 71ms (Views: 58.8ms | ActiveRecord: 6.1ms | Allocations: 29984)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 00:14:21 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 7.5ms | Allocations: 2507)
+  Rendered shared/_navbar.html.erb (Duration: 1.3ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.8ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 49.7ms | Allocations: 25094)
+Completed 200 OK in 65ms (Views: 52.9ms | ActiveRecord: 5.9ms | Allocations: 30097)
+
+
+Started GET "/" for ::1 at 2024-04-08 00:14:50 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 302)
+  Rendered shared/_navbar.html.erb (Duration: 2.2ms | Allocations: 473)
+  Rendered shared/_footer.html.erb (Duration: 0.7ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 44.3ms | Allocations: 23453)
+Completed 200 OK in 50ms (Views: 48.6ms | ActiveRecord: 0.0ms | Allocations: 24538)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 00:14:51 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 10.1ms | Allocations: 2475)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 129)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 32.6ms | Allocations: 10478)
+Completed 200 OK in 56ms (Views: 38.1ms | ActiveRecord: 5.4ms | Allocations: 14918)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 00:15:09 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 4.4ms | Allocations: 2481)
+  Rendered shared/_navbar.html.erb (Duration: 1.8ms | Allocations: 429)
+  Rendered shared/_footer.html.erb (Duration: 0.7ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 56.4ms | Allocations: 25324)
+Completed 200 OK in 74ms (Views: 62.2ms | ActiveRecord: 3.8ms | Allocations: 30271)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 00:15:57 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 10.3ms | Allocations: 2493)
+  Rendered shared/_navbar.html.erb (Duration: 1.8ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.4ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 59.4ms | Allocations: 25280)
+Completed 200 OK in 81ms (Views: 62.2ms | ActiveRecord: 4.1ms | Allocations: 30284)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 00:16:49 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 9.2ms | Allocations: 2502)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 34.9ms | Allocations: 25295)
+Completed 200 OK in 47ms (Views: 38.2ms | ActiveRecord: 2.1ms | Allocations: 30261)
+
+
+Started GET "/" for ::1 at 2024-04-08 00:16:51 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 291)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 162)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 18.9ms | Allocations: 8796)
+Completed 200 OK in 21ms (Views: 19.7ms | ActiveRecord: 0.0ms | Allocations: 9344)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 00:17:59 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 3.6ms | Allocations: 2526)
+  Rendered shared/_navbar.html.erb (Duration: 2.6ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 27.5ms | Allocations: 25370)
+Completed 200 OK in 38ms (Views: 31.1ms | ActiveRecord: 3.4ms | Allocations: 30336)
+
+
+Started GET "/contacts/youtube-icon-url" for ::1 at 2024-04-08 00:17:59 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/contacts/youtube-icon-url"):
+  
+Started GET "/contacts/instagram-icon-url" for ::1 at 2024-04-08 00:17:59 +0100
+Started GET "/contacts/discord-icon-url" for ::1 at 2024-04-08 00:17:59 +0100
+Started GET "/contacts/twitter-icon-url" for ::1 at 2024-04-08 00:17:59 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/contacts/discord-icon-url"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/contacts/twitter-icon-url"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/contacts/instagram-icon-url"):
+  
+Started GET "/contacts/new" for ::1 at 2024-04-08 00:19:12 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 40.4ms | Allocations: 2549)
+  Rendered shared/_navbar.html.erb (Duration: 1.7ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.4ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 122.2ms | Allocations: 25337)
+Completed 200 OK in 184ms (Views: 130.5ms | ActiveRecord: 37.8ms | Allocations: 30341)
+
+
+Started GET "/contacts/instagram-icon-url" for ::1 at 2024-04-08 00:19:13 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/contacts/instagram-icon-url"):
+  
+Started GET "/contacts/twitter-icon-url" for ::1 at 2024-04-08 00:19:13 +0100
+Started GET "/contacts/discord-icon-url" for ::1 at 2024-04-08 00:19:13 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/contacts/twitter-icon-url"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/contacts/discord-icon-url"):
+  
+Started GET "/" for ::1 at 2024-04-08 00:19:14 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 291)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 162)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | Allocations: 8822)
+Completed 200 OK in 13ms (Views: 12.6ms | ActiveRecord: 0.0ms | Allocations: 9370)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 00:23:15 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 33.7ms | Allocations: 2562)
+  Rendered shared/_navbar.html.erb (Duration: 3.9ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.7ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 106.0ms | Allocations: 25351)
+Completed 200 OK in 153ms (Views: 110.9ms | ActiveRecord: 34.7ms | Allocations: 30354)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 00:23:51 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 5.3ms | Allocations: 2511)
+  Rendered shared/_navbar.html.erb (Duration: 1.5ms | Allocations: 429)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 55.7ms | Allocations: 25305)
+Completed 200 OK in 68ms (Views: 59.3ms | ActiveRecord: 4.0ms | Allocations: 30248)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 00:24:47 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 141.3ms | Allocations: 2543)
+  Rendered shared/_navbar.html.erb (Duration: 121.2ms | Allocations: 427)
+  Rendered shared/_footer.html.erb (Duration: 0.7ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 455.3ms | Allocations: 25335)
+Completed 200 OK in 680ms (Views: 485.6ms | ActiveRecord: 69.9ms | Allocations: 30338)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 00:25:19 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 13.3ms | Allocations: 2518)
+  Rendered shared/_navbar.html.erb (Duration: 1.7ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 71.8ms | Allocations: 25229)
+Completed 200 OK in 109ms (Views: 75.5ms | ActiveRecord: 29.7ms | Allocations: 30193)
+
+
+Started GET "/" for ::1 at 2024-04-08 00:25:43 +0100
+Started GET "/contacts/new" for ::1 at 2024-04-08 00:25:45 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 302)
+  Rendered shared/_navbar.html.erb (Duration: 1.4ms | Allocations: 473)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 53.5ms | Allocations: 23434)
+Completed 200 OK in 60ms (Views: 56.3ms | ActiveRecord: 0.0ms | Allocations: 24519)
+
+
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 12.2ms | Allocations: 2527)
+  Rendered shared/_navbar.html.erb (Duration: 1.5ms | Allocations: 427)
+  Rendered shared/_footer.html.erb (Duration: 1.4ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 65.4ms | Allocations: 25373)
+Completed 200 OK in 98ms (Views: 67.4ms | ActiveRecord: 10.8ms | Allocations: 30378)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 00:26:09 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 11.5ms | Allocations: 2530)
+  Rendered shared/_navbar.html.erb (Duration: 2.3ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 64.0ms | Allocations: 25318)
+Completed 200 OK in 87ms (Views: 67.0ms | ActiveRecord: 7.5ms | Allocations: 30283)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 00:26:25 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 17.5ms | Allocations: 2555)
+  Rendered shared/_navbar.html.erb (Duration: 1.4ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 59.8ms | Allocations: 25344)
+Completed 200 OK in 81ms (Views: 67.3ms | ActiveRecord: 2.5ms | Allocations: 30309)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 00:26:46 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 7.3ms | Allocations: 2531)
+  Rendered shared/_navbar.html.erb (Duration: 2.0ms | Allocations: 427)
+  Rendered shared/_footer.html.erb (Duration: 0.8ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 69.1ms | Allocations: 25339)
+Completed 200 OK in 83ms (Views: 72.4ms | ActiveRecord: 5.8ms | Allocations: 30285)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 00:28:02 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 11.7ms | Allocations: 1647)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 6816.3ms | Allocations: 80581)
+Completed 200 OK in 6818ms (Views: 6817.2ms | ActiveRecord: 0.0ms | Allocations: 80878)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 00:28:40 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 9.1ms | Allocations: 2543)
+  Rendered shared/_navbar.html.erb (Duration: 1.6ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.4ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 39.2ms | Allocations: 25137)
+Completed 200 OK in 56ms (Views: 43.3ms | ActiveRecord: 3.4ms | Allocations: 30140)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 00:29:10 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 9.7ms | Allocations: 2520)
+  Rendered shared/_navbar.html.erb (Duration: 2.4ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 42.9ms | Allocations: 25309)
+Completed 200 OK in 57ms (Views: 45.9ms | ActiveRecord: 3.2ms | Allocations: 30274)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 00:29:28 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 14.4ms | Allocations: 2514)
+  Rendered shared/_navbar.html.erb (Duration: 2.2ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 1.2ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 63.3ms | Allocations: 25304)
+Completed 200 OK in 82ms (Views: 69.8ms | ActiveRecord: 2.5ms | Allocations: 30269)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 00:30:55 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 12.4ms | Allocations: 1649)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 35.3ms | Allocations: 9722)
+Completed 200 OK in 37ms (Views: 36.2ms | ActiveRecord: 0.0ms | Allocations: 10019)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 00:32:55 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 8.3ms | Allocations: 1640)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 5116.5ms | Allocations: 80379)
+Completed 200 OK in 5119ms (Views: 5117.3ms | ActiveRecord: 0.0ms | Allocations: 80647)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 00:33:15 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 20.9ms | Allocations: 1657)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 5809.3ms | Allocations: 80207)
+Completed 200 OK in 5811ms (Views: 5810.1ms | ActiveRecord: 0.0ms | Allocations: 80476)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 00:33:47 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1681)
+  Rendered shared/_navbar.html.erb (Duration: 1.0ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 5795.0ms | Allocations: 80208)
+Completed 200 OK in 5796ms (Views: 5795.7ms | ActiveRecord: 0.0ms | Allocations: 80476)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 00:36:25 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 16.0ms | Allocations: 2544)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.4ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 58.0ms | Allocations: 25327)
+Completed 200 OK in 69ms (Views: 61.1ms | ActiveRecord: 0.0ms | Allocations: 29601)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 00:37:27 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 9.8ms | Allocations: 1652)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 6023.9ms | Allocations: 80410)
+Completed 200 OK in 6025ms (Views: 6024.5ms | ActiveRecord: 0.0ms | Allocations: 80706)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 00:38:22 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1651)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 19.9ms | Allocations: 9574)
+Completed 200 OK in 21ms (Views: 20.4ms | ActiveRecord: 0.0ms | Allocations: 9843)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 00:38:48 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 11.5ms | Allocations: 1658)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 4574.3ms | Allocations: 80189)
+Completed 200 OK in 4576ms (Views: 4575.1ms | ActiveRecord: 0.0ms | Allocations: 80458)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 00:40:12 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 482.8ms | Allocations: 1654)
+  Rendered shared/_navbar.html.erb (Duration: 2.8ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 8165.8ms | Allocations: 80197)
+Completed 200 OK in 8368ms (Views: 8227.9ms | ActiveRecord: 0.0ms | Allocations: 80467)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 00:59:29 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 643.0ms | Allocations: 1657)
+  Rendered shared/_navbar.html.erb (Duration: 4.7ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 10862.6ms | Allocations: 80205)
+Completed 200 OK in 11150ms (Views: 10995.3ms | ActiveRecord: 0.0ms | Allocations: 80477)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 01:00:15 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 47.0ms | Allocations: 1640)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 11421.5ms | Allocations: 80191)
+Completed 200 OK in 11431ms (Views: 11427.0ms | ActiveRecord: 0.0ms | Allocations: 80461)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 01:00:47 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 22.7ms | Allocations: 2545)
+  Rendered shared/_navbar.html.erb (Duration: 2.4ms | Allocations: 427)
+  Rendered shared/_footer.html.erb (Duration: 1.7ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 150.2ms | Allocations: 25158)
+Completed 200 OK in 192ms (Views: 154.9ms | ActiveRecord: 0.0ms | Allocations: 29431)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 01:01:56 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 4.4ms | Allocations: 2558)
+  Rendered shared/_navbar.html.erb (Duration: 1.3ms | Allocations: 429)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 5410.1ms | Allocations: 96021)
+Completed 200 OK in 5441ms (Views: 5412.0ms | ActiveRecord: 34.0ms | Allocations: 100985)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 01:02:27 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 9.6ms | Allocations: 2658)
+  Rendered shared/_navbar.html.erb (Duration: 1.6ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.4ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 43.1ms | Allocations: 25170)
+Completed 200 OK in 62ms (Views: 47.7ms | ActiveRecord: 7.1ms | Allocations: 30172)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 01:02:44 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 8.3ms | Allocations: 2598)
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 35.5ms | Allocations: 25387)
+Completed 200 OK in 51ms (Views: 38.2ms | ActiveRecord: 4.3ms | Allocations: 30352)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 01:03:28 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 7.4ms | Allocations: 2615)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.4ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 29.4ms | Allocations: 25404)
+Completed 200 OK in 48ms (Views: 32.0ms | ActiveRecord: 3.5ms | Allocations: 30369)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 01:03:47 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 13.1ms | Allocations: 2733)
+  Rendered shared/_navbar.html.erb (Duration: 1.5ms | Allocations: 427)
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 54.2ms | Allocations: 25548)
+Completed 200 OK in 94ms (Views: 58.4ms | ActiveRecord: 25.2ms | Allocations: 30494)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 01:05:35 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 9.6ms | Allocations: 2732)
+  Rendered shared/_navbar.html.erb (Duration: 1.5ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.8ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 59.8ms | Allocations: 25526)
+Completed 200 OK in 89ms (Views: 62.4ms | ActiveRecord: 5.0ms | Allocations: 30529)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 01:07:47 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 15.9ms | Allocations: 2725)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | Allocations: 429)
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 5439.7ms | Allocations: 96393)
+Completed 200 OK in 5459ms (Views: 5443.3ms | ActiveRecord: 3.0ms | Allocations: 101357)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 01:08:08 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 7.6ms | Allocations: 1838)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 4650.3ms | Allocations: 80391)
+Completed 200 OK in 4652ms (Views: 4651.2ms | ActiveRecord: 0.0ms | Allocations: 80688)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 01:08:45 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 8.5ms | Allocations: 1817)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 4176.1ms | Allocations: 80376)
+Completed 200 OK in 4178ms (Views: 4176.8ms | ActiveRecord: 0.0ms | Allocations: 80646)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 01:09:00 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 10.2ms | Allocations: 1820)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 5543.7ms | Allocations: 80377)
+Completed 200 OK in 5547ms (Views: 5545.2ms | ActiveRecord: 0.0ms | Allocations: 80647)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 01:09:25 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 9.8ms | Allocations: 1828)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 4181.3ms | Allocations: 80382)
+Completed 200 OK in 4183ms (Views: 4182.2ms | ActiveRecord: 0.0ms | Allocations: 80651)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 01:09:54 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 9.4ms | Allocations: 1815)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 4439.1ms | Allocations: 80375)
+Completed 200 OK in 4441ms (Views: 4440.0ms | ActiveRecord: 0.0ms | Allocations: 80645)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 01:10:18 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 4.6ms | Allocations: 2741)
+  Rendered shared/_navbar.html.erb (Duration: 1.5ms | Allocations: 427)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 44.9ms | Allocations: 25393)
+Completed 200 OK in 58ms (Views: 47.8ms | ActiveRecord: 3.9ms | Allocations: 30398)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 01:10:40 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1834)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 4235.3ms | Allocations: 80595)
+Completed 200 OK in 4236ms (Views: 4235.8ms | ActiveRecord: 0.0ms | Allocations: 80892)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 01:10:51 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 6.1ms | Allocations: 1841)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 4376.3ms | Allocations: 80404)
+Completed 200 OK in 4378ms (Views: 4377.0ms | ActiveRecord: 0.0ms | Allocations: 80674)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 01:11:26 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 9.6ms | Allocations: 1823)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 27.6ms | Allocations: 9706)
+Completed 200 OK in 29ms (Views: 28.2ms | ActiveRecord: 0.0ms | Allocations: 9974)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 01:12:33 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 9.2ms | Allocations: 2728)
+  Rendered shared/_navbar.html.erb (Duration: 1.1ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 41.2ms | Allocations: 25321)
+Completed 200 OK in 61ms (Views: 44.0ms | ActiveRecord: 6.2ms | Allocations: 30324)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 01:13:22 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1794)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 4601.2ms | Allocations: 80555)
+Completed 200 OK in 4603ms (Views: 4602.1ms | ActiveRecord: 0.0ms | Allocations: 80852)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 01:13:39 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 21.4ms | Allocations: 1832)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 4242.1ms | Allocations: 80394)
+Completed 200 OK in 4245ms (Views: 4243.6ms | ActiveRecord: 0.0ms | Allocations: 80664)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 01:14:13 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 12.4ms | Allocations: 1820)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 4573.5ms | Allocations: 80383)
+Completed 200 OK in 4576ms (Views: 4574.8ms | ActiveRecord: 0.0ms | Allocations: 80651)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 01:14:36 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1803)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 5959.7ms | Allocations: 80385)
+Completed 200 OK in 5961ms (Views: 5960.4ms | ActiveRecord: 0.0ms | Allocations: 80655)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 01:14:44 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1823)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 22.7ms | Allocations: 9777)
+Completed 200 OK in 25ms (Views: 24.4ms | ActiveRecord: 0.0ms | Allocations: 10046)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 01:14:52 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 6.3ms | Allocations: 1806)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 4316.0ms | Allocations: 80376)
+Completed 200 OK in 4319ms (Views: 4317.3ms | ActiveRecord: 0.0ms | Allocations: 80645)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 01:15:26 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 28.9ms | Allocations: 2739)
+  Rendered shared/_navbar.html.erb (Duration: 1.4ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.7ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 71.6ms | Allocations: 25339)
+Completed 200 OK in 88ms (Views: 74.1ms | ActiveRecord: 4.5ms | Allocations: 30342)
+
+
+Started GET "/" for ::1 at 2024-04-08 01:16:05 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 291)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 162)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | Allocations: 8636)
+Completed 200 OK in 12ms (Views: 10.3ms | ActiveRecord: 0.0ms | Allocations: 9183)
+
+
+Started GET "/" for ::1 at 2024-04-08 01:16:06 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 137)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 27.0ms | Allocations: 8093)
+Completed 200 OK in 29ms (Views: 27.8ms | ActiveRecord: 0.0ms | Allocations: 8349)
+
+
+Started GET "/contacts/contacts/new" for ::1 at 2024-04-08 01:16:11 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/contacts/contacts/new"):
+  
+Started GET "/" for ::1 at 2024-04-08 01:16:16 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 137)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 16.6ms | Allocations: 8106)
+Completed 200 OK in 28ms (Views: 17.4ms | ActiveRecord: 0.0ms | Allocations: 8363)
+
+
+Started GET "/" for ::1 at 2024-04-08 01:16:17 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 137)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 25.3ms | Allocations: 8093)
+Completed 200 OK in 28ms (Views: 27.8ms | ActiveRecord: 0.0ms | Allocations: 8348)
+
+
+Started GET "/" for ::1 at 2024-04-08 01:16:28 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 137)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 26.1ms | Allocations: 8096)
+Completed 200 OK in 30ms (Views: 29.5ms | ActiveRecord: 0.0ms | Allocations: 8351)
+
+
+Started GET "/" for ::1 at 2024-04-08 01:16:37 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 137)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 19.4ms | Allocations: 8084)
+Completed 200 OK in 21ms (Views: 20.2ms | ActiveRecord: 0.0ms | Allocations: 8340)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 01:16:54 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 4.9ms | Allocations: 1937)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 24.3ms | Allocations: 9816)
+Completed 200 OK in 25ms (Views: 24.9ms | ActiveRecord: 0.0ms | Allocations: 10097)
+
+
+Started GET "/contacts/contacts/new" for ::1 at 2024-04-08 01:16:55 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/contacts/contacts/new"):
+  
+Started GET "/" for ::1 at 2024-04-08 01:16:58 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 137)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 20.5ms | Allocations: 8106)
+Completed 200 OK in 25ms (Views: 24.2ms | ActiveRecord: 0.0ms | Allocations: 8362)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 01:17:24 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 9.1ms | Allocations: 1810)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 29.1ms | Allocations: 9692)
+Completed 200 OK in 31ms (Views: 30.3ms | ActiveRecord: 0.0ms | Allocations: 9963)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 01:17:34 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 5.6ms | Allocations: 1809)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 22.9ms | Allocations: 9688)
+Completed 200 OK in 24ms (Views: 23.5ms | ActiveRecord: 0.0ms | Allocations: 9959)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 01:17:34 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 9.2ms | Allocations: 1815)
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 27.4ms | Allocations: 9694)
+Completed 200 OK in 29ms (Views: 28.3ms | ActiveRecord: 0.0ms | Allocations: 9964)
+
+
+Started GET "/contacts/contacts/new" for ::1 at 2024-04-08 01:17:36 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/contacts/contacts/new"):
+  
+Started GET "/" for ::1 at 2024-04-08 01:17:58 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered shared/_navbar.html.erb (Duration: 2.5ms | Allocations: 137)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 26.2ms | Allocations: 8094)
+Completed 200 OK in 28ms (Views: 27.2ms | ActiveRecord: 0.0ms | Allocations: 8351)
+
+
+Started GET "/" for ::1 at 2024-04-08 01:18:30 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 300)
+  Rendered shared/_navbar.html.erb (Duration: 1.3ms | Allocations: 473)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 31.2ms | Allocations: 23283)
+Completed 200 OK in 35ms (Views: 34.1ms | ActiveRecord: 0.0ms | Allocations: 24367)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 01:18:31 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 6.7ms | Allocations: 2724)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 129)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 18.1ms | Allocations: 10727)
+Completed 200 OK in 38ms (Views: 19.0ms | ActiveRecord: 10.1ms | Allocations: 15204)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 01:21:28 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 8.8ms | Allocations: 2741)
+  Rendered shared/_navbar.html.erb (Duration: 1.9ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.9ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 56.5ms | Allocations: 25339)
+Completed 200 OK in 80ms (Views: 61.8ms | ActiveRecord: 5.3ms | Allocations: 30304)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 01:21:52 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 9.8ms | Allocations: 2737)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.4ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 40.1ms | Allocations: 25532)
+Completed 200 OK in 59ms (Views: 46.5ms | ActiveRecord: 4.8ms | Allocations: 30499)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 01:22:00 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 8.6ms | Allocations: 2700)
+  Rendered shared/_navbar.html.erb (Duration: 1.1ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.7ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 53.1ms | Allocations: 25293)
+Completed 200 OK in 72ms (Views: 56.0ms | ActiveRecord: 5.1ms | Allocations: 30241)
+
+
+Started GET "/" for ::1 at 2024-04-08 01:22:27 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 302)
+  Rendered shared/_navbar.html.erb (Duration: 1.4ms | Allocations: 473)
+  Rendered shared/_footer.html.erb (Duration: 0.8ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 32.9ms | Allocations: 23446)
+Completed 200 OK in 36ms (Views: 34.5ms | ActiveRecord: 0.0ms | Allocations: 24531)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 01:22:28 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 17.5ms | Allocations: 2708)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 129)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 28.8ms | Allocations: 10711)
+Completed 200 OK in 61ms (Views: 35.4ms | ActiveRecord: 12.8ms | Allocations: 15189)
+
+
+Started GET "/" for ::1 at 2024-04-08 01:23:54 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 300)
+Started GET "/contacts/new" for ::1 at 2024-04-08 01:23:58 +0100
+  Rendered shared/_navbar.html.erb (Duration: 1.0ms | Allocations: 474)
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 5286.4ms | Allocations: 95041)
+Completed 200 OK in 5290ms (Views: 5288.8ms | ActiveRecord: 0.0ms | Allocations: 96125)
+
+
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 9.3ms | Allocations: 2732)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | Allocations: 427)
+  Rendered shared/_footer.html.erb (Duration: 0.4ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 75.9ms | Allocations: 33221)
+Completed 200 OK in 86ms (Views: 78.7ms | ActiveRecord: 1.5ms | Allocations: 38356)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 01:24:43 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 10.9ms | Allocations: 1807)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 5638.0ms | Allocations: 80578)
+Completed 200 OK in 5640ms (Views: 5639.3ms | ActiveRecord: 0.0ms | Allocations: 80874)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 01:25:18 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 20.8ms | Allocations: 1809)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 4288.6ms | Allocations: 80475)
+Completed 200 OK in 4291ms (Views: 4289.5ms | ActiveRecord: 0.0ms | Allocations: 80744)
+
+
+Started GET "/" for ::1 at 2024-04-08 01:27:29 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 295)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | Allocations: 162)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 29.8ms | Allocations: 8631)
+Completed 200 OK in 34ms (Views: 32.2ms | ActiveRecord: 0.0ms | Allocations: 9179)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 01:28:30 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 276.7ms | Allocations: 1952)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 5361.6ms | Allocations: 80923)
+Completed 200 OK in 5367ms (Views: 5362.7ms | ActiveRecord: 0.0ms | Allocations: 81202)
+
+
+Started GET "/" for ::1 at 2024-04-08 01:29:23 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 137)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 19.6ms | Allocations: 8090)
+Completed 200 OK in 23ms (Views: 22.8ms | ActiveRecord: 0.0ms | Allocations: 8346)
+
+
+Started GET "/" for ::1 at 2024-04-08 01:29:24 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 137)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 21.0ms | Allocations: 8084)
+Completed 200 OK in 23ms (Views: 22.0ms | ActiveRecord: 0.0ms | Allocations: 8339)
+
+
+Started GET "/" for ::1 at 2024-04-08 01:30:10 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered shared/_navbar.html.erb (Duration: 1.5ms | Allocations: 137)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 15.7ms | Allocations: 8088)
+Completed 200 OK in 17ms (Views: 16.4ms | ActiveRecord: 0.0ms | Allocations: 8343)
+
+
+Started GET "/" for ::1 at 2024-04-08 01:31:25 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 298)
+  Rendered shared/_navbar.html.erb (Duration: 1.7ms | Allocations: 473)
+  Rendered shared/_footer.html.erb (Duration: 1.0ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 78.9ms | Allocations: 23428)
+Completed 200 OK in 84ms (Views: 81.6ms | ActiveRecord: 0.0ms | Allocations: 24510)
+
+
+Started GET "/" for ::1 at 2024-04-08 01:31:42 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 289)
+  Rendered shared/_navbar.html.erb (Duration: 3.0ms | Allocations: 477)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 1753.5ms | Allocations: 23311)
+Completed 200 OK in 1757ms (Views: 1755.3ms | ActiveRecord: 0.0ms | Allocations: 24390)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 01:32:06 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 7.1ms | Allocations: 2717)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 129)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 23.4ms | Allocations: 10798)
+Completed 200 OK in 37ms (Views: 25.2ms | ActiveRecord: 0.0ms | Allocations: 14556)
+
+
+Started GET "/contacts/contacts/new" for ::1 at 2024-04-08 01:32:06 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/contacts/contacts/new"):
+  
+Started GET "/contacts/new" for ::1 at 2024-04-08 01:34:58 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 4.5ms | Allocations: 2736)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | Allocations: 425)
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 23.3ms | Allocations: 25529)
+Completed 200 OK in 42ms (Views: 24.7ms | ActiveRecord: 20.2ms | Allocations: 30534)
+
+
+Started GET "/" for ::1 at 2024-04-08 01:35:08 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 281)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 162)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | Allocations: 8602)
+Completed 200 OK in 12ms (Views: 11.4ms | ActiveRecord: 0.0ms | Allocations: 9149)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 01:35:17 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1917)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 14.6ms | Allocations: 9815)
+Completed 200 OK in 16ms (Views: 15.3ms | ActiveRecord: 0.0ms | Allocations: 10095)
+
+
+Started GET "/contacts/contacts/new" for ::1 at 2024-04-08 01:35:17 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/contacts/contacts/new"):
+  
+Started GET "/" for ::1 at 2024-04-08 01:35:44 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 7)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 137)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | Allocations: 8294)
+Completed 200 OK in 12ms (Views: 11.8ms | ActiveRecord: 0.0ms | Allocations: 8550)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 01:36:08 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1832)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | Allocations: 9711)
+Completed 200 OK in 12ms (Views: 11.9ms | ActiveRecord: 0.0ms | Allocations: 9982)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 01:36:08 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1806)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | Allocations: 9685)
+Completed 200 OK in 12ms (Views: 11.9ms | ActiveRecord: 0.0ms | Allocations: 9955)
+
+
+Started GET "/contacts/contacts/new" for ::1 at 2024-04-08 01:36:09 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/contacts/contacts/new"):
+  
+Started GET "/" for ::1 at 2024-04-08 01:36:24 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 137)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 8282)
+Completed 200 OK in 9ms (Views: 8.8ms | ActiveRecord: 0.0ms | Allocations: 8538)
+
+
+Started GET "/" for ::1 at 2024-04-08 01:36:56 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 137)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 16.8ms | Allocations: 8291)
+Completed 200 OK in 19ms (Views: 18.2ms | ActiveRecord: 0.0ms | Allocations: 8545)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 01:37:12 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1841)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | Allocations: 9720)
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.0ms | Allocations: 9991)
+
+
+Started GET "/contacts/contacts/new" for ::1 at 2024-04-08 01:37:13 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/contacts/contacts/new"):
+  
+Started POST "/contacts" for ::1 at 2024-04-08 01:37:50 +0100
+Processing by ContactsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "contact"=>{"name"=>"Manolache Laurentiu Cristian", "email"=>"extendedindeed@outlook.com", "message"=>"You are the best bro <3 "}, "commit"=>"SUBMIT"}
+  [1m[36mTRANSACTION (4.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/contacts_controller.rb:9:in `create'
+  [1m[36mContact Create (18.1ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Manolache Laurentiu Cristian"], ["email", "extendedindeed@outlook.com"], ["message", "You are the best bro <3 "], ["created_at", "2024-04-08 00:37:50.897050"], ["updated_at", "2024-04-08 00:37:50.897050"]]
+  ↳ app/controllers/contacts_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (9.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/contacts_controller.rb:9:in `create'
+ContactMailer#contact_email: processed outbound mail in 8.7ms
+Delivered mail 66133c5eef1b9_ec96435899918@DESKTOP-UOTQUM5.mail (1800.7ms)
+Date: Mon, 08 Apr 2024 01:37:50 +0100
+From: contact@mlcristian.com
+Reply-To: extendedindeed@outlook.com
+To: mlcristian@outlook.com
+Message-ID: <66133c5eef1b9_ec96435899918@DESKTOP-UOTQUM5.mail>
+Subject: New Contact Message from mlcristian.com
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Name: Manolache Laurentiu Cristian
+
+Message: You are the best bro <3 
+Redirected to http://localhost:3000/contacts/new
+Completed 302 Found in 1887ms (ActiveRecord: 31.9ms | Allocations: 10180)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 01:37:52 +0100
+Processing by ContactsController#new as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 2038)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 129)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | Allocations: 10271)
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.0ms | Allocations: 10649)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 01:39:32 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1809)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 9688)
+Completed 200 OK in 10ms (Views: 9.9ms | ActiveRecord: 0.0ms | Allocations: 9957)
+
+
+Started POST "/contacts" for ::1 at 2024-04-08 01:40:47 +0100
+Processing by ContactsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "contact"=>{"name"=>"", "email"=>"", "message"=>""}, "commit"=>"SUBMIT"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/contacts_controller.rb:9:in `create'
+  [1m[36mContact Create (5.5ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", ""], ["email", ""], ["message", ""], ["created_at", "2024-04-08 00:40:47.095960"], ["updated_at", "2024-04-08 00:40:47.095960"]]
+  ↳ app/controllers/contacts_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/contacts_controller.rb:9:in `create'
+ContactMailer#contact_email: processed outbound mail in 0.7ms
+Delivered mail 66133d0f19a4c_ec9643441000d8@DESKTOP-UOTQUM5.mail (1918.2ms)
+Date: Mon, 08 Apr 2024 01:40:47 +0100
+From: contact@mlcristian.com
+To: mlcristian@outlook.com
+Message-ID: <66133d0f19a4c_ec9643441000d8@DESKTOP-UOTQUM5.mail>
+Subject: New Contact Message from mlcristian.com
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Name: 
+
+Message: 
+Redirected to http://localhost:3000/contacts/new
+Completed 302 Found in 1929ms (ActiveRecord: 5.7ms | Allocations: 5971)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 01:40:49 +0100
+Processing by ContactsController#new as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1822)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 4202.5ms | Allocations: 80602)
+Completed 200 OK in 4203ms (Views: 4202.8ms | ActiveRecord: 0.0ms | Allocations: 80876)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 01:40:53 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1823)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 9702)
+Completed 200 OK in 10ms (Views: 9.7ms | ActiveRecord: 0.0ms | Allocations: 9970)
+
+
+Started POST "/contacts" for ::1 at 2024-04-08 01:41:38 +0100
+Processing by ContactsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "contact"=>{"name"=>"Laurentiu", "email"=>"mlcristian@outlook.com", "message"=>"Asasasa"}, "commit"=>"SUBMIT"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/contacts_controller.rb:9:in `create'
+  [1m[36mContact Create (1.3ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Laurentiu"], ["email", "mlcristian@outlook.com"], ["message", "Asasasa"], ["created_at", "2024-04-08 00:41:38.638208"], ["updated_at", "2024-04-08 00:41:38.638208"]]
+  ↳ app/controllers/contacts_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (5.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/contacts_controller.rb:9:in `create'
+ContactMailer#contact_email: processed outbound mail in 0.9ms
+Delivered mail 66133d429ee66_ec9643301001b8@DESKTOP-UOTQUM5.mail (1632.4ms)
+Date: Mon, 08 Apr 2024 01:41:38 +0100
+From: contact@mlcristian.com
+Reply-To: mlcristian@outlook.com
+To: mlcristian@outlook.com
+Message-ID: <66133d429ee66_ec9643301001b8@DESKTOP-UOTQUM5.mail>
+Subject: New Contact Message from mlcristian.com
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Name: Laurentiu
+
+Message: Asasasa
+Redirected to http://localhost:3000/contacts/new
+Completed 302 Found in 1662ms (ActiveRecord: 15.6ms | Allocations: 11950)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 01:41:40 +0100
+Processing by ContactsController#new as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 2680)
+  Rendered shared/_navbar.html.erb (Duration: 1.0ms | Allocations: 427)
+  Rendered shared/_footer.html.erb (Duration: 0.4ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 41.5ms | Allocations: 25320)
+Completed 200 OK in 45ms (Views: 43.7ms | ActiveRecord: 0.0ms | Allocations: 26431)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 01:42:56 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1823)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 4165.1ms | Allocations: 80593)
+Completed 200 OK in 4166ms (Views: 4165.5ms | ActiveRecord: 0.0ms | Allocations: 80889)
+
+
+Started POST "/contacts" for ::1 at 2024-04-08 01:43:22 +0100
+Processing by ContactsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "contact"=>{"name"=>"Ciao Bambina", "email"=>"mlcristian@outlook.com", "message"=>"Amazing dev"}, "commit"=>"SUBMIT"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/contacts_controller.rb:9:in `create'
+  [1m[36mContact Create (4.5ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Ciao Bambina"], ["email", "mlcristian@outlook.com"], ["message", "Amazing dev"], ["created_at", "2024-04-08 00:43:22.025039"], ["updated_at", "2024-04-08 00:43:22.025039"]]
+  ↳ app/controllers/contacts_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/contacts_controller.rb:9:in `create'
+ContactMailer#contact_email: processed outbound mail in 0.9ms
+Delivered mail 66133daa8072_ec96436c100214@DESKTOP-UOTQUM5.mail (1650.2ms)
+Date: Mon, 08 Apr 2024 01:43:22 +0100
+From: contact@mlcristian.com
+Reply-To: mlcristian@outlook.com
+To: mlcristian@outlook.com
+Message-ID: <66133daa8072_ec96436c100214@DESKTOP-UOTQUM5.mail>
+Subject: New Contact Message from mlcristian.com
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Name: Ciao Bambina
+
+Message: Amazing dev
+Redirected to http://localhost:3000/contacts/new
+Completed 302 Found in 1660ms (ActiveRecord: 4.7ms | Allocations: 6307)
+
+
+Started GET "/contacts/new" for ::1 at 2024-04-08 01:43:23 +0100
+Processing by ContactsController#new as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1839)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 124)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 15.0ms | Allocations: 9718)
+Completed 200 OK in 16ms (Views: 15.7ms | ActiveRecord: 0.0ms | Allocations: 9991)
+
+

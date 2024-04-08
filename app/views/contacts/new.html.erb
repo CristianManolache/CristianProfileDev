@@ -1,23 +1,100 @@
-<div class="container-fluid container-main">
+<div class="container-fluid container-contact">
   <div class="row">
-    <div class="col-xxl-6 offset-xxl-3">
-      <div class="card gaming border">
+    <div class="col-md-6 col-lg-6 col-xxl-6"> <!-- Changed col to col-xxl -->
+      <!-- Left half for details -->
+      <div class="card mb-3 gaming-border">
+        <div class="card-body">
+          <!-- Close icon -->
+          <i class="fas fa-times xicon"></i>
+          <i class="fa-solid fa-minus"></i>
+          <i class="fa-regular fa-square"></i>
+          <!-- Details -->
+          <h1 class="card-title language-title">CONNECT WITH ME</h1>
+          <!-- Add your social media links here -->
+          <div class="projects">
+            <div class="card-text tool-container">
+              <div class="tool">
+                <a href="https://www.linkedin.com/in/mlcristian" target="_blank">
+                  <img alt="LinkedIn" class="tool-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/LinkedIn_icon.svg/2048px-LinkedIn_icon.svg.png" />
+                </a>
+                <br>
+                <span class="tool-name">LinkedIn</span>
+              </div>
+              <div class="tool">
+                <a href="https://github.com/Cristian Manolache" target="_blank">
+                  <img alt="GitHub" class="tool-logo" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" />
+                </a>
+                <br>
+                <span class="tool-name">GitHub</span>
+              </div>
+              <!-- Add more social media links -->
+              <div class="tool">
+                <a href="https://www.youtube.com/channel/lazer1ka" target="_blank">
+                  <img alt="YouTube" class="tool-logo" src="https://www.svgrepo.com/show/13671/youtube.svg" />
+                </a>
+                <br>
+                <span class="tool-name">YouTube</span>
+              </div>
+              <div class="tool">
+                <a href="https://www.instagram.com/instaalazer" target="_blank">
+                  <img alt="Instagram" class="tool-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/768px-Instagram_logo_2016.svg.png" />
+                </a>
+                <br>
+                <span class="tool-name">Instagram</span>
+              </div>
+              <div class="tool">
+                <a href="https://twitter.com/lazer1ca" target="_blank">
+                  <img alt="Twitter" class="tool-logo" src="https://upload.wikimedia.org/wikipedia/commons/c/ce/X_logo_2023.svg" />
+                </a>
+                <br>
+                <span class="tool-name">Twitter</span>
+              </div>
+              <div class="tool">
+                <a href="https://discord.com/users/607618938137739284" target="_blank">
+                  <img alt="Discord" class="tool-logo" src="https://www.svgrepo.com/show/353655/discord-icon.svg" />
+                </a>
+                <br>
+                <span class="tool-name">Discord</span>
+              </div>
+              <div class="tool">
+                <a href="https://www.twitch.tv/lazer1ka" target="_blank">
+                  <img alt="Twitch" class="tool-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Twitch_Glitch_Logo_Purple.svg/1200px-Twitch_Glitch_Logo_Purple.svg.png" />
+                </a>
+                <br>
+                <span class="tool-name">Twitch</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-6 col-xxl-6"> <!-- Changed col to col-xxl -->
+      <!-- Right half for contact form -->
+      <!-- Flash Messages -->
+      <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>">
+          <%= value %>
+        </div>
+      <% end %>
+
+      <div class="card gaming-border">
         <div class="card-body">
           <!-- Close icon -->
           <i class="fas fa-times xicon"></i>
           <i class="fa-solid fa-minus"></i>
           <i class="fa-regular fa-square"></i>
           <!-- Title -->
-          <div class="contactme">
-            <h5 class="card-title">Contact Me</h5>
+          <div class="contact-me">
+            <h1 class="card-title">CONTACT ME</h1>
+            <p id="helper-contact">Feel free to reach out to me directly via email using the form below! I look forward to hearing from you.</p>
+            <!-- Contact Form -->
+            <%= simple_form_for @contact do |form| %>
+              <%= form.input :name, required: true, placeholder: "Enter your full name (required)" %>
+              <%= form.input :email, required: true, placeholder: "Enter your email address (required)" %>
+              <%= form.input :message, required: true, placeholder: "Enter your message here (required)", as: :text %>
+              <%= form.button :submit, "SUBMIT", class: "btn btn-primary btn-contact" %>
+            <% end %>
           </div>
-          <!-- Contact Form -->
-          <%= simple_form_for @contact do |form| %>
-            <%= form.input :name, required: true, label: "Name" %>
-            <%= form.input :email, required: true, label: "Email" %>
-            <%= form.input :message, required: true, label: "Message", as: :text %>
-            <%= form.button :submit, "Submit", class: "btn btn-primary" %>
-          <% end %>
         </div>
       </div>
     </div>
