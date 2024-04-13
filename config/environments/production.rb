@@ -97,9 +97,9 @@ Rails.application.configure do
   #
   # Action Mailer configuration
   config.action_mailer.smtp_settings = {
-    address:              'smtp-mail.outlook.com',
+    address:              'live.smtp.mailtrap.io',
     port:                 587,
-    domain:               'outlook.com',
+    domain:               'mlcristian.com',
     user_name:            ENV['SMTP_USERNAME'],
     password:             ENV['SMTP_PASSWORD'],
     authentication:       'plain',
