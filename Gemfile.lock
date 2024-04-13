@@ -166,11 +166,7 @@ GEM
       racc (~> 1.4)
     nokogiri (1.16.3-x86_64-linux)
       racc (~> 1.4)
-<<<<<<< HEAD
-    pg (1.5.5)
-=======
     pg (1.5.6)
->>>>>>> d98cef5d2ee5141fcea929aab5196c3450c052de
     popper_js (2.11.8)
     psych (5.1.2)
       stringio
