@@ -15335,3 +15335,160 @@ Completed 200 OK in 21ms (Views: 20.3ms | ActiveRecord: 0.0ms | Allocations: 105
 >>>>>>> d98cef5d2ee5141fcea929aab5196c3450c052de
 [dotenv] Set [36mSMTP_USERNAME[0m and [36mSMTP_PASSWORD[0m
 [dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mSMTP_USERNAME[0m and [36mSMTP_PASSWORD[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for 127.0.0.1 at 2024-04-14 17:49:30 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 369)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 578)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 93)
+  Rendered layout layouts/application.html.erb (Duration: 90.6ms | Allocations: 60919)
+Completed 200 OK in 98ms (Views: 93.3ms | ActiveRecord: 0.0ms | Allocations: 65223)
+
+
+Started GET "/" for 127.0.0.1 at 2024-04-14 17:52:21 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 293)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | Allocations: 524)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 22.7ms | Allocations: 24569)
+Completed 200 OK in 24ms (Views: 23.4ms | ActiveRecord: 0.0ms | Allocations: 25658)
+
+
+Started GET "/" for 127.0.0.1 at 2024-04-14 17:53:11 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 291)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 486)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 15.6ms | Allocations: 23496)
+Completed 200 OK in 17ms (Views: 16.4ms | ActiveRecord: 0.0ms | Allocations: 24589)
+
+
+Started GET "/" for 127.0.0.1 at 2024-04-14 17:54:26 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 291)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | Allocations: 488)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 76.0ms | Allocations: 23170)
+Completed 200 OK in 79ms (Views: 77.7ms | ActiveRecord: 0.0ms | Allocations: 24257)
+
+
+Started GET "/" for 127.0.0.1 at 2024-04-14 17:55:06 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 291)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 486)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 15.1ms | Allocations: 23502)
+Completed 200 OK in 17ms (Views: 16.0ms | ActiveRecord: 0.0ms | Allocations: 24595)
+
+
+Started GET "/" for 127.0.0.1 at 2024-04-14 17:56:35 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 293)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 486)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 15.0ms | Allocations: 23176)
+Completed 200 OK in 16ms (Views: 15.8ms | ActiveRecord: 0.0ms | Allocations: 24261)
+
+
+Started GET "/" for 127.0.0.1 at 2024-04-14 17:58:07 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 297)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 486)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 14.3ms | Allocations: 23525)
+Completed 200 OK in 16ms (Views: 15.2ms | ActiveRecord: 0.0ms | Allocations: 24613)
+
+
+Started GET "/" for 127.0.0.1 at 2024-04-14 17:58:19 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 293)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 486)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 17.4ms | Allocations: 23552)
+Completed 200 OK in 19ms (Views: 18.5ms | ActiveRecord: 0.0ms | Allocations: 24640)
+
+
+Started GET "/" for 127.0.0.1 at 2024-04-14 17:58:27 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 292)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | Allocations: 488)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 19.2ms | Allocations: 23490)
+Completed 200 OK in 21ms (Views: 20.1ms | ActiveRecord: 0.0ms | Allocations: 24581)
+
+
+Started GET "/" for 127.0.0.1 at 2024-04-14 17:59:25 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 292)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 490)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 5628.8ms | Allocations: 107248)
+Completed 200 OK in 5630ms (Views: 5629.5ms | ActiveRecord: 0.0ms | Allocations: 108335)
+
+
+Started GET "/" for 127.0.0.1 at 2024-04-14 17:59:45 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 151)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 5176.1ms | Allocations: 79467)
+Completed 200 OK in 5177ms (Views: 5176.3ms | ActiveRecord: 0.0ms | Allocations: 79744)
+
+
+Started GET "/" for 127.0.0.1 at 2024-04-14 18:00:07 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 151)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 8136)
+Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 0.0ms | Allocations: 8394)
+
+
+Started GET "/" for 127.0.0.1 at 2024-04-14 18:00:35 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 151)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 8141)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms | Allocations: 8399)
+
+
+Started GET "/" for 127.0.0.1 at 2024-04-14 18:01:24 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 151)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 8025)
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.0ms | Allocations: 8282)
+
+
