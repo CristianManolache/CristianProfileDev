@@ -134,6 +134,16 @@ body {
   //   }
 }
 
+// VIDEO PRESENTATION
+.videopresentation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 10px;
+  padding: 5px;
+}
+
 // LANGUAGES AND TOOLS
 .tool-container {
   width: 100%;
