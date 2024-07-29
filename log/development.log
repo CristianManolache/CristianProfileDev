@@ -15492,3 +15492,30 @@ Processing by HomeviewController#index as HTML
 Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.0ms | Allocations: 8282)
 
 
+[dotenv] Set [36mSMTP_USERNAME[0m and [36mSMTP_PASSWORD[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for 127.0.0.1 at 2024-07-29 21:20:04 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 376)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 581)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 93)
+  Rendered layout layouts/application.html.erb (Duration: 210.7ms | Allocations: 82165)
+Completed 200 OK in 218ms (Views: 213.6ms | ActiveRecord: 0.0ms | Allocations: 86299)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2024-07-29 21:20:07 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 19.9ms | Allocations: 10862)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 147)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 26.8ms | Allocations: 19143)
+Completed 200 OK in 59ms (Views: 27.2ms | ActiveRecord: 1.1ms | Allocations: 35141)
+
+
+[dotenv] Set [36mSMTP_USERNAME[0m and [36mSMTP_PASSWORD[0m
+[dotenv] Loaded [33m.env[0m
