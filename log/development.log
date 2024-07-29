@@ -15519,3 +15519,113 @@ Completed 200 OK in 59ms (Views: 27.2ms | ActiveRecord: 1.1ms | Allocations: 351
 
 [dotenv] Set [36mSMTP_USERNAME[0m and [36mSMTP_PASSWORD[0m
 [dotenv] Loaded [33m.env[0m
+Started GET "/contacts/new" for 127.0.0.1 at 2024-07-29 21:20:54 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 2877)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 442)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 20.7ms | Allocations: 25619)
+Completed 200 OK in 26ms (Views: 21.4ms | ActiveRecord: 1.1ms | Allocations: 30758)
+
+
+Started GET "/" for 127.0.0.1 at 2024-07-29 21:21:06 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 295)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 486)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 14.1ms | Allocations: 23364)
+Completed 200 OK in 15ms (Views: 14.8ms | ActiveRecord: 0.0ms | Allocations: 24452)
+
+
+Started GET "/" for 127.0.0.1 at 2024-07-29 21:21:07 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 151)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 8200)
+Completed 200 OK in 7ms (Views: 6.8ms | ActiveRecord: 0.0ms | Allocations: 8477)
+
+
+Started GET "/" for 127.0.0.1 at 2024-07-29 21:21:26 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 405)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 486)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 14.3ms | Allocations: 23273)
+Completed 200 OK in 15ms (Views: 14.9ms | ActiveRecord: 0.0ms | Allocations: 24362)
+
+
+Started GET "/" for 127.0.0.1 at 2024-07-29 21:21:34 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 405)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 488)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 18.3ms | Allocations: 23361)
+Completed 200 OK in 20ms (Views: 19.0ms | ActiveRecord: 0.0ms | Allocations: 24448)
+
+
+Started GET "/" for 127.0.0.1 at 2024-07-29 21:21:49 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 405)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 486)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | Allocations: 23529)
+Completed 200 OK in 15ms (Views: 14.5ms | ActiveRecord: 0.0ms | Allocations: 24614)
+
+
+Started GET "/" for 127.0.0.1 at 2024-07-29 21:21:57 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 151)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 8194)
+Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.0ms | Allocations: 8473)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2024-07-29 21:22:00 +0100
+Processing by ContactsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/new.html.erb within layouts/application (Duration: 3.6ms | Allocations: 2775)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 143)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 13.6ms | Allocations: 10825)
+Completed 200 OK in 21ms (Views: 14.2ms | ActiveRecord: 1.5ms | Allocations: 15467)
+
+
+Started GET "/" for 127.0.0.1 at 2024-07-29 21:22:02 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 151)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 8194)
+Completed 200 OK in 6ms (Views: 6.1ms | ActiveRecord: 0.0ms | Allocations: 8459)
+
+
+Started GET "/" for 127.0.0.1 at 2024-07-29 21:22:47 +0100
+Processing by HomeviewController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homeview/index.html.erb within layouts/application
+  Rendered homeview/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 404)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 487)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 88)
+  Rendered layout layouts/application.html.erb (Duration: 13.0ms | Allocations: 23291)
+Completed 200 OK in 14ms (Views: 13.9ms | ActiveRecord: 0.0ms | Allocations: 24375)
+
+
